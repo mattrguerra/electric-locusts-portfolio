@@ -1,0 +1,21 @@
+{
+  "series": "Exposure",
+  "slug": "exposure",
+  "description": "Photography series on depression and vulnerability",
+  "year": 2023,
+  "medium": "Photography",
+  "artworks": [
+    {
+      "id": 1,
+      "filename": "exposure_01.jpg",
+      "title": "Untitled 1",
+      "description": "Visualizing the weight and emotional exposure of depression.",
+      "medium": "Photography",
+      "year": 2023,
+      "dimensions": "Variable",
+      "featured": true,
+      "order": 1,
+      "alt": "Photograph depicting emotional vulnerability and the raw experience of depression"
+    }
+  ]
+}

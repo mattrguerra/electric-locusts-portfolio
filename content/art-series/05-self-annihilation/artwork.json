@@ -1,0 +1,21 @@
+{
+  "series": "Self-Annihilation",
+  "slug": "self-annihilation",
+  "description": "Mixed media series exploring identity, mental illness, and addiction",
+  "year": 2023,
+  "medium": "Medium format film photography, scratched/burned negatives, archival prints, artist book, video",
+  "artworks": [
+    {
+      "id": 1,
+      "filename": "self-annihilation_01_scratched.jpg",
+      "title": "Scratched Negative 1",
+      "description": "Self-portrait with image physically scratched from the negative, representing self-destruction and identity loss.",
+      "medium": "Medium format film, scratched negative, archival print",
+      "year": 2023,
+      "dimensions": "16 x 20 inches (print)",
+      "featured": true,
+      "order": 1,
+      "alt": "Self-portrait photograph with scratched and damaged negative showing physical destruction as metaphor for psychological destruction"
+    }
+  ]
+}

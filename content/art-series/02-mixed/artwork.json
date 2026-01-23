@@ -1,0 +1,21 @@
+{
+  "series": "Mixed",
+  "slug": "mixed",
+  "description": "Visual exploration of Bipolar Disorder and mixed episodes",
+  "year": 2023,
+  "medium": "Mixed media / Visual art",
+  "artworks": [
+    {
+      "id": 1,
+      "filename": "mixed_01.jpg",
+      "title": "Untitled 1",
+      "description": "Visual representation of the chaos and contradiction of bipolar mixed episodes.",
+      "medium": "Mixed media",
+      "year": 2023,
+      "dimensions": "Variable",
+      "featured": true,
+      "order": 1,
+      "alt": "Abstract mixed media artwork showing visual chaos and overlapping contradictory elements"
+    }
+  ]
+}
