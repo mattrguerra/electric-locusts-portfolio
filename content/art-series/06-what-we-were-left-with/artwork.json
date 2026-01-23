@@ -1,0 +1,21 @@
+{
+  "series": "What We Were Left With",
+  "slug": "what-we-were-left-with",
+  "description": "Documentary photography series on addiction and trauma",
+  "year": 2023,
+  "medium": "Documentary / Archival Photography",
+  "artworks": [
+    {
+      "id": 1,
+      "filename": "what-we-were-left-with_01.jpg",
+      "title": "Archive 1",
+      "description": "Photograph from personal archive documenting the aftermath of addiction and trauma.",
+      "medium": "Documentary photography",
+      "year": 2023,
+      "dimensions": "Variable",
+      "featured": true,
+      "order": 1,
+      "alt": "Documentary photograph from personal archive showing the reality and aftermath of addiction"
+    }
+  ]
+}

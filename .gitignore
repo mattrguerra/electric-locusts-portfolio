@@ -1,0 +1,69 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+/art-assets
+/content/copywriting/*.pdf
+/content/copywriting/about/02_about_page.pdf
+/content/copywriting/contact/11_contact_page_copy.pdf
+/content/copywriting/deconstructing_masculinity/07_statement_deconstructing_masculinity.pdf
+/content/copywriting/exposure/05_statement_exposure.pdf
+/content/copywriting/home/09_homepage_copy.pdf
+/content/copywriting/mixed/06_statement_mixed.pdf
+/content/copywriting/my_gritty_dark_nightmare/08_statement_my_gritty_dark_nightmare.pdf
+/content/copywriting/people_who_saved_my_life/04_statement_people_who_saved_my_life.pdf
+/content/copywriting/self_annihilation/03_statement_self_annihilation.pdf
+/content/copywriting/services/10_services_page_copy.pdf
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# prisma
+/prisma/migrations/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# logs
+*.log
+logs/

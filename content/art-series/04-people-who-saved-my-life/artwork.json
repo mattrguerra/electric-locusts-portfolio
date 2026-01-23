@@ -1,0 +1,21 @@
+{
+  "series": "People Who Saved My Life",
+  "slug": "people-who-saved-my-life",
+  "description": "Cyanotype portrait series honoring connection and gratitude",
+  "year": 2023,
+  "medium": "Cyanotype prints on watercolor paper, handwritten letters",
+  "artworks": [
+    {
+      "id": 1,
+      "filename": "people-saved_01_cyanotype-a.jpg",
+      "title": "Portrait 1",
+      "description": "Cyanotype portrait honoring someone whose presence kept the artist alive.",
+      "medium": "Cyanotype print on watercolor paper",
+      "year": 2023,
+      "dimensions": "11 x 14 inches",
+      "featured": true,
+      "order": 1,
+      "alt": "Ethereal blue cyanotype portrait with sacred quality honoring a life-saving relationship"
+    }
+  ]
+}

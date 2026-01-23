@@ -1,0 +1,21 @@
+{
+  "series": "Deconstructing Masculinity",
+  "slug": "deconstructing-masculinity",
+  "description": "Portrait series challenging societal expectations of manhood",
+  "year": 2023,
+  "medium": "Portrait Photography",
+  "artworks": [
+    {
+      "id": 1,
+      "filename": "deconstructing-masculinity_01.jpg",
+      "title": "Portrait 1",
+      "description": "A subject challenging traditional masculine archetypes through vulnerability and authentic expression.",
+      "medium": "Portrait Photography",
+      "year": 2023,
+      "dimensions": "24 x 36 inches (print)",
+      "featured": true,
+      "order": 1,
+      "alt": "Black and white portrait showing vulnerability through soft expression and open body language"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model PortfolioItem {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  category    String
+  imageUrl    String
+  tags        String[]
+  featured    Boolean  @default(false)
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model BlogPost {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  excerpt     String
+  content     String
+  coverImage  String?
+  category    String
+  tags        String[]
+  published   Boolean  @default(false)
+  publishedAt DateTime?
+  author      String   @default("Matt Guerra")
+  readTime    Int      @default(5)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model ContactSubmission {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  subject   String?
+  message   String
+  status    String   @default("new")
+  createdAt DateTime @default(now())
+}
+
+model Service {
+  id          String   @id @default(cuid())
+  name        String
+  description String
+  category    String
+  priceRange  String?
+  features    String[]
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
