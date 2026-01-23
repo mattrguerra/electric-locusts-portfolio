@@ -12,7 +12,7 @@ const featuredProjects = [
     category: 'Mixed Media',
     description:
       'Scratching and burning myself off medium format negatives—physically removing myself from the frame',
-    image: '/portfolio/self_annihilation/self_annihilation_1.jpg',
+    image: '/portfolio/self_annihilation/1.jpg',
     featured: true,
   },
   {
@@ -27,14 +27,14 @@ const featuredProjects = [
     title: 'People Who Saved My Life',
     category: 'Cyanotype',
     description: 'Portraits of the people who kept me alive',
-    image: '/portfolio/people_saved/people_saved_1.jpg',
+    image: '/portfolio/people_saved/1.jpg',
   },
   {
     id: '4',
     title: 'Deconstructing Masculinity',
     category: 'Portrait',
     description: 'Challenging narrow definitions of manhood',
-    image: '/portfolio/masculinity/masculinity_1.jpg',
+    image: '/portfolio/masculinity/1.jpg',
   },
 ];
 
