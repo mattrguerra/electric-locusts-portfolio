@@ -27,7 +27,7 @@ const featuredProjects = [
     title: 'People Who Saved My Life',
     category: 'Cyanotype',
     description: 'Portraits of the people who kept me alive',
-    image: '/portfolio/people_saved/1.jpg',
+    image: '/portfolio/people_saved/Cyanotype0001.jpg',
   },
   {
     id: '4',
