@@ -128,19 +128,19 @@ export default function AboutClient() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <p className="text-gray-200 text-xl leading-relaxed">
+            <p className="text-gray-200 text-lg leading-relaxed">
               My whole life I have had an unstable sense of identity. Trying to find where I fit in
               the world has caused me tremendous strife, an obsession that has shaped everything I
               create.
             </p>
-            <p className="text-gray-300 text-lg leading-relaxed">
+            <p className="text-gray-200 text-lg leading-relaxed">
               I work across photography, video art, mixed media, and alternative processes like
               cyanotype printing. My practice began with medium format film and has evolved to
               include scratching and burning my own image from negatives, handmade artist books,
               video installations, and portrait series that explore gratitude, masculinity, and the
               weight of depression.
             </p>
-            <p className="text-gray-300 text-lg leading-relaxed">
+            <p className="text-gray-200 text-lg leading-relaxed">
               Living with bipolar disorder, anxiety, OCD, and ADHD has left me broken and confused
               at times, but it has also given me something urgent to say. I believe that art has the
               power to help people feel less alone.

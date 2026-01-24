@@ -89,10 +89,10 @@ export default function LatestPosts() {
                     <h3 className="text-xl font-bold text-white mt-1 mb-2 group-hover:text-primary-300 transition-colors line-clamp-2">
                       {post?.title ?? ''}
                     </h3>
-                    <p className="text-white/60 text-sm line-clamp-2 mb-4">
+                    <p className="text-white/70 text-sm line-clamp-2 mb-4">
                       {post?.excerpt ?? ''}
                     </p>
-                    <div className="flex items-center gap-4 text-white/40 text-xs">
+                    <div className="flex items-center gap-4 text-white/50 text-xs">
                       <span className="flex items-center gap-1">
                         <Calendar className="w-3 h-3" />
                         {formatDate(post?.publishedAt)}

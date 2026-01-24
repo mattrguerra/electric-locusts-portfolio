@@ -111,7 +111,7 @@ export default function FeaturedWork() {
                   <h3 className="text-3xl md:text-4xl font-display font-light text-white mt-2 mb-3 group-hover:text-white/80 transition-opacity duration-500 group-hover:opacity-0">
                     {featuredProjects[0].title}
                   </h3>
-                  <p className="text-white/40 text-xl md:text-base max-w-md transition-opacity duration-500 group-hover:opacity-0">
+                  <p className="text-white/70 text-base md:text-lg max-w-md transition-opacity duration-500 group-hover:opacity-0">
                     {featuredProjects[0].description}
                   </p>
                 </motion.div>

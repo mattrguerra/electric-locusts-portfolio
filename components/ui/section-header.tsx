@@ -35,7 +35,7 @@ export default function SectionHeader({
         <span className="gradient-text">{title ?? ''}</span>
       </h2>
       {subtitle && (
-        <p className="text-white/60 text-lg max-w-2xl mx-auto">
+        <p className="text-white/70 text-lg max-w-2xl mx-auto">
           {subtitle}
         </p>
       )}
