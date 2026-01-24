@@ -51,9 +51,6 @@ export default function FeaturedWork() {
         />
       </div>
 
-      {/* Dark overlay - visible by default, fades on hover */}
-      <div className="absolute inset-0 bg-black/70 transition-opacity duration-500 group-hover:opacity-0" />
-
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section header - minimal, organic */}
         <motion.div
@@ -86,6 +83,8 @@ export default function FeaturedWork() {
                   fill
                   className="object-cover transition-all duration-1000 ease-organic group-hover:scale-105 img-atmospheric"
                 />
+                
+                <div className="absolute inset-0 bg-black/70 transition-opacity duration-500 group-hover:opacity-0" />
 
                 {/* Organic gradient overlays */}
                 <div className="absolute inset-0 bg-gradient-to-t from-void via-void/40 to-transparent" />
