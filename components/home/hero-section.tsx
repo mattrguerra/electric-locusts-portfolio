@@ -124,8 +124,8 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-lg text-gray-200 max-w-md leading-relaxed"
             >
-              Photography and mixed media exploring mental illness,
-              identity dissolution, and the evidence we leave behind.
+              What remains when identity fractures. Visual artifacts from the space
+              between survival and dissolution.
             </motion.p>
 
             <motion.div
@@ -138,12 +138,12 @@ export default function HeroSection() {
                 Enter the Work
               </Link>
               <Link href="/about" className="btn-secondary">
-                Who is this?
+                The Artist
               </Link>
             </motion.div>
           </div>
 
-          {/* Right - Interactive Series Preview */}
+          {/* Right - Interactive Series Preview - clicking takes to portfolio page */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -157,11 +157,11 @@ export default function HeroSection() {
 
               <div className="space-y-1">
                 {series.map((s, index) => (
-                  <button
+                  <Link
                     key={s.slug}
-                    onClick={() => setActiveIndex(index)}
+                    href={`/portfolio/${s.slug}`}
                     onMouseEnter={() => setActiveIndex(index)}
-                    className={`w-full text-left px-4 py-3 rounded transition-all duration-300 group ${
+                    className={`block w-full text-left px-4 py-3 rounded transition-all duration-300 group ${
                       activeIndex === index
                         ? 'bg-white/10'
                         : 'hover:bg-white/5'
@@ -199,23 +199,15 @@ export default function HeroSection() {
                         </motion.p>
                       )}
                     </AnimatePresence>
-                  </button>
+                  </Link>
                 ))}
               </div>
-
-              <Link
-                href={`/portfolio/${activeSeries.slug}`}
-                className="inline-flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300 text-sm mt-4 group"
-              >
-                <span>View {activeSeries.title}</span>
-                <span className="group-hover:translate-x-1 transition-transform">→</span>
-              </Link>
             </div>
           </motion.div>
         </div>
       </motion.div>
 
-      {/* Scroll indicator - positioned to not overlap with image */}
+      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
