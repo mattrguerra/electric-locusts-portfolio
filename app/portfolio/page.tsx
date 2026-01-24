@@ -77,7 +77,7 @@ export default function PortfolioPage() {
           </h1>
         </header>
 
-        {/* Tighter grid - images prominent */}
+        {/* Grid with dark overlay that fades on hover to reveal image */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {series.map((s) => (
             <Link
@@ -86,27 +86,35 @@ export default function PortfolioPage() {
               className="group block relative overflow-hidden"
             >
               {/* Image container */}
-              <div className="aspect-[4/5] relative">
+              <div className="aspect-[4/5] relative bg-gray-900">
                 <img
                   src={s.image}
                   alt={s.title}
                   loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                 />
-                {/* Strong gradient overlay for text legibility on any image */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/20" />
 
-                {/* Content overlay */}
-                <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                  <span className="text-gray-400 text-xs tracking-widest uppercase mb-2">
+                {/* Dark overlay - visible by default, fades on hover */}
+                <div className="absolute inset-0 bg-black/70 transition-opacity duration-500 group-hover:opacity-0" />
+
+                {/* Content - visible by default, fades on hover */}
+                <div className="absolute inset-0 p-6 flex flex-col justify-center items-center text-center transition-opacity duration-500 group-hover:opacity-0">
+                  <span className="text-gray-500 text-xs tracking-widest uppercase mb-3">
                     {s.medium} · {s.year}
                   </span>
-                  <h2 className="font-display text-2xl text-white mb-2 group-hover:text-gray-200 transition-colors drop-shadow-lg">
+                  <h2 className="font-display text-2xl md:text-3xl text-white mb-3">
                     {s.title}
                   </h2>
-                  <p className="text-gray-300 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
                     {s.description}
                   </p>
+                </div>
+
+                {/* Hover hint at bottom */}
+                <div className="absolute bottom-4 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <span className="text-white/80 text-sm bg-black/50 px-3 py-1 rounded">
+                    View Series →
+                  </span>
                 </div>
               </div>
             </Link>
