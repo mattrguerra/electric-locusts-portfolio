@@ -39,7 +39,7 @@ const series = [
     slug: 'mixed',
     title: 'Mixed',
     year: 2020,
-    image: 'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257782/1_qoh1en.jpg',
+    image: 'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257784/4_t9h288.jpg',
     tagline: 'Chaos contained',
   },
   {
