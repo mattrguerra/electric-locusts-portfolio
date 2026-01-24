@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 
