@@ -152,7 +152,7 @@ export default function FeaturedWork() {
 
                   {/* Content */}
                   <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <span className="text-white/30 text-sm tracking-widest uppercasetransition-opacity duration-500 group-hover:opacity-0">
+                    <span className="text-white/30 text-sm tracking-widest uppercase transition-opacity duration-500 group-hover:opacity-0">
                       {project.category}
                     </span>
                     <h3 className="text-xl font-display font-light text-white mt-1 group-hover:text-white/80 transition-opacity duration-500 group-hover:opacity-0">
