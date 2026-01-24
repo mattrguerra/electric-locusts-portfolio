@@ -95,7 +95,7 @@ export default function HeroSection() {
               src={activeSeries.image}
               alt=""
               className="w-full h-full object-cover"
-              style={{ filter: 'grayscale(35%) contrast(1.1)' }}
+              style={{ filter: 'grayscale(50%) contrast(1.1)' }}
             />
           </motion.div>
         </AnimatePresence>
