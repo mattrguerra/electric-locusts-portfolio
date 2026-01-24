@@ -5,16 +5,32 @@ import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import VideoPlayer from '@/components/video-player';
 
+// Cloudinary image URLs for Self Annihilation
 const images = [
-  '1.jpg', '3.jpg', '5.jpg', '7.jpg', '9.jpg',
-  '11.jpg', '13.jpg', '15.jpg', '17.jpg', '19.jpg',
-  '21.jpg', '23.jpg', '25.jpg', '27.jpg', '29.jpg',
-  '31.jpg', '33.jpg', '35.jpg', '37.jpg', '39.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258735/1_plkakn.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257976/3_p9axam.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257975/5_ia9ocz.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258741/7_htglf7.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257971/9_fomjvu.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257974/11_sdc8df.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257969/13_km83gp.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257976/15_fy9g6w.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257971/17_n8eyzp.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257966/19_mn09pq.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257970/21_stir4c.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257964/23_xcuhfa.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258782/25_nvbclq.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257969/27_jryfwe.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257972/29_rlrfdd.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257965/31_phk93p.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257964/33_rkbb4r.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258741/35_tkfnnb.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257959/37_fikfoz.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257957/39_ce6ygc.jpg',
 ];
 
-// TODO: Replace with your Cloudinary video URL
-// This video should LOOP endlessly
-const VIDEO_URL = process.env.NEXT_PUBLIC_SELF_ANNIHILATION_VIDEO || '';
+// Self Annihilation video - loops endlessly
+const VIDEO_URL = 'https://res.cloudinary.com/dkrj3oqsy/video/upload/v1769260896/Self_Annihilation_optimized_dgyzmq.mp4';
 
 export default function SelfAnnihilationPage() {
   return (
@@ -110,7 +126,7 @@ export default function SelfAnnihilationPage() {
               >
                 <div className="aspect-[4/5] relative">
                   <img
-                    src={`/portfolio/self_annihilation/${img}`}
+                    src={img}
                     alt={`Self Annihilation ${index + 1}`}
                     loading={index < 4 ? 'eager' : 'lazy'}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"

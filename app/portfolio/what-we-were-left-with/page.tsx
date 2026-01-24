@@ -4,7 +4,42 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 
-const images = Array.from({ length: 33 }, (_, i) => `${i + 1}.jpg`);
+// Cloudinary image URLs for What We Were Left With
+const images = [
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258298/1_ggamf2.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258877/2_bzvxak.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258297/3_lkmhke.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258297/4_auruuw.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258883/5_imt46l.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258894/6_gblx38.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258879/7_rtgrey.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258888/8_hq3fnr.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258288/9_adjzq2.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258288/10_jz7wum.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258286/11_ukzmaa.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258287/12_zra4ii.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258890/13_i67mnm.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258280/14_jcx6gq.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258280/15_cprur4.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258277/16_xjsqpz.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258276/17_zr9zxy.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258275/18_szcopa.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769263748/19_ttmjvd.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258274/20_ol23av.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258117/21_vpuitw.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258114/22_bq5wmw.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258117/23_aicajl.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258112/24_fok7u2.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258118/25_fltwnu.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258110/26_pqlvxy.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258116/27_ri4ww5.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258118/28_kjwnsa.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258109/29_gjc8og.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258883/30_btjnma.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258104/31_dl1zup.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258107/32_bcooyv.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258107/33_wng4mt.jpg',
+];
 
 export default function WhatWeWereLeftWithPage() {
   return (
@@ -88,7 +123,7 @@ export default function WhatWeWereLeftWithPage() {
               >
                 <div className="aspect-[4/5] relative">
                   <img
-                    src={`/portfolio/what_we_were_left_with/${img}`}
+                    src={img}
                     alt={`What We Were Left With ${index + 1}`}
                     loading={index < 6 ? 'eager' : 'lazy'}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"

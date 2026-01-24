@@ -8,33 +8,34 @@ import { ArrowRight } from 'lucide-react';
 const featuredProjects = [
   {
     id: '1',
+    title: 'What We Were Left With',
+    category: 'Documentary',
+    description: 'Archive of survival from years of addiction',
+    image: 'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258107/33_wng4mt.jpg',
+  },
+  {
+    id: '2',
     title: 'Self Annihilation',
     category: 'Mixed Media',
     description:
       'Scratching and burning myself off medium format negatives—physically removing myself from the frame',
-    image: '/portfolio/self_annihilation/1.jpg',
+    image: 'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258735/1_plkakn.jpg',
     featured: true,
   },
-  {
-    id: '2',
-    title: 'What We Were Left With',
-    category: 'Documentary',
-    description: 'Archive of survival from years of addiction',
-    image: '/portfolio/what_we_were_left_with/1.jpg',
-  },
+
   {
     id: '3',
     title: 'People Who Saved My Life',
     category: 'Cyanotype',
     description: 'Portraits of the people who kept me alive',
-    image: '/portfolio/people_saved/Cyanotype0001.jpg',
+    image: 'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257844/Cyanotype0001_thqymg.jpg',
   },
   {
     id: '4',
     title: 'Deconstructing Masculinity',
     category: 'Portrait',
     description: 'Challenging narrow definitions of manhood',
-    image: '/portfolio/masculinity/1.jpg',
+    image: 'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257508/21_hdndtl.jpg',
   },
 ];
 

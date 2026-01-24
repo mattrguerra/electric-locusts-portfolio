@@ -89,7 +89,7 @@ export default function AboutClient() {
             >
               <div className="aspect-[3/4] bg-gray-900 rounded overflow-hidden">
                 <img
-                  src="/portfolio/self_annihilation/1.jpg"
+                  src="https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769261111/matt2_h3rqdm.jpg"
                   alt="Matthew Guerra"
                   className="w-full h-full object-cover opacity-80"
                 />

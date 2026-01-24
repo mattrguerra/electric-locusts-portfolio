@@ -4,16 +4,17 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 
+// Cloudinary image URLs for Exposure
 const images = [
-  '_MG_8279.jpg',
-  '_MG_8281.jpg',
-  '_MG_8292.jpg',
-  '_MG_8301.jpg',
-  '_MG_8308.jpg',
-  '_MG_8319.jpg',
-  '_MG_8331.jpg',
-  '_MG_8335.jpg',
-  '_MG_8346.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257879/_MG_8279_eb8tmi.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257873/_MG_8281_anbtuh.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258349/_MG_8292_xsupta.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257878/_MG_8301_ib7yug.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258348/_MG_8308_t4g1s3.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257874/_MG_8319_ptqt87.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257870/_MG_8331_dfnpqs.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257868/_MG_8335_ajvclc.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258349/_MG_8346_aiuuck.jpg',
 ];
 
 export default function ExposurePage() {
@@ -38,7 +39,7 @@ export default function ExposurePage() {
           className="mb-12"
         >
           <p className="text-gray-500 text-xs tracking-[0.2em] uppercase mb-4">
-            Photography · 2023
+            Photography · 2021
           </p>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-white mb-6">
             Exposure
@@ -98,7 +99,7 @@ export default function ExposurePage() {
               >
                 <div className="aspect-[3/4] relative">
                   <img
-                    src={`/portfolio/exposure/${img}`}
+                    src={img}
                     alt={`Exposure ${index + 1}`}
                     loading={index < 4 ? 'eager' : 'lazy'}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
