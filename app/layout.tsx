@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { IBM_Plex_Sans, Instrument_Serif } from 'next/font/google';
+import { IBM_Plex_Sans, IBM_Plex_Serif } from 'next/font/google';
 import './globals.css';
 import Navigation from '@/components/navigation';
 import Footer from '@/components/footer';
@@ -12,9 +12,9 @@ const ibmPlex = IBM_Plex_Sans({
   variable: '--font-body',
 });
 
-const instrumentSerif = Instrument_Serif({
+const ibmPlexSerif = IBM_Plex_Serif({
   subsets: ['latin'],
-  weight: ['400'],
+  weight: ['400', '600'],
   variable: '--font-display',
 });
 
@@ -71,7 +71,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${ibmPlex.variable} ${instrumentSerif.variable}`}>
+    <html lang="en" className={`${ibmPlex.variable} ${ibmPlexSerif.variable}`}>
       <body className="antialiased min-h-screen flex flex-col bg-[#0a0a0a] text-[gray]">
         <Navigation />
         <main className="flex-grow relative z-10">{children}</main>
