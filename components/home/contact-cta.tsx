@@ -40,7 +40,7 @@ export default function ContactCTA() {
             let&apos;s connect
           </span>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-light text-gray/90 tracking-tight leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-light text-white/90 tracking-tight leading-tight">
             Interested in a{' '}
             <span className="gradient-text">collaboration</span>?
           </h2>
