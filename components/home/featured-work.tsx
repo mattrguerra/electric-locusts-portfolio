@@ -51,6 +51,9 @@ export default function FeaturedWork() {
         />
       </div>
 
+      {/* Dark overlay - visible by default, fades on hover */}
+      <div className="absolute inset-0 bg-black/70 transition-opacity duration-500 group-hover:opacity-0" />
+
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section header - minimal, organic */}
         <motion.div
@@ -69,7 +72,7 @@ export default function FeaturedWork() {
 
         {/* Featured project - large */}
         <motion.div
-          initial={{ opacity: 3, y: 40 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mb-8"
