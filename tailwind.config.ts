@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
@@ -9,109 +9,62 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Core void/dark colors
-        void: {
-          DEFAULT: '#030304',
-          deep: '#050506',
-          surface: '#0a0a0c',
+        // Core monochromatic
+        black: '#0a0a0a',
+        gray: {
+          900: '#141414',
+          800: '#1a1a1a',
+          700: '#242424',
+          600: '#333333',
+          500: '#555555',
+          400: '#777777',
+          300: '#999999',
+          200: '#bbbbbb',
+          100: '#dddddd',
         },
-        // Flesh & organic tones from artwork
+        white: '#f5f5f5',
+        // Flesh tones
         flesh: {
-          pale: '#e8d5c4',
-          warm: '#c9a68a',
-          shadow: '#8b6b5a',
+          pale: '#d4c4b5',
+          warm: '#b8a090',
+          shadow: '#8b7b6b',
         },
-        // Cellular/organic colors
-        cellular: {
-          blue: '#4a7cb8',
-          purple: '#6b4a8b',
-          cyan: '#5aa8b8',
-        },
-        // Bruise/trauma tones
-        bruise: {
-          deep: '#2a1a3a',
-          purple: '#4a2a5a',
-          dark: '#1a0b2e',
-        },
-        // Burn/void accent
-        burn: {
-          orange: '#c45a30',
-          red: '#8b2a1a',
-        },
-        // Legacy primary colors (kept for compatibility)
-        primary: {
-          50: '#f5f3ff',
-          100: '#ede9fe',
-          200: '#ddd6fe',
-          300: '#c4b5fd',
-          400: '#a78bfa',
-          500: '#8b5cf6',
-          600: '#7c3aed',
-          700: '#6d28d9',
-          800: '#5b21b6',
-          900: '#4c1d95',
-        },
-        accent: {
-          cyan: '#5aa8b8',
-          purple: '#6b4a8b',
-          blue: '#4a7cb8',
-        },
+        // Accent (rarely used)
+        blood: '#6b2020',
+        wound: '#4a1818',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Outfit', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'Georgia', 'serif'],
+        body: ['var(--font-body)', '-apple-system', 'sans-serif'],
       },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'gradient-organic': 'linear-gradient(145deg, rgba(107, 74, 139, 0.1) 0%, rgba(74, 124, 184, 0.05) 100%)',
-        'gradient-void': 'linear-gradient(180deg, #030304 0%, #050506 50%, #0a0a0c 100%)',
+      fontSize: {
+        display: ['clamp(3rem, 8vw, 7rem)', { lineHeight: '0.95', letterSpacing: '-0.03em' }],
+        headline: ['clamp(2rem, 4vw, 3.5rem)', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
       },
       animation: {
-        'organic-float': 'organic-float 8s cubic-bezier(0.37, 0, 0.63, 1) infinite',
-        'cellular-breathe': 'cellular-breathe 20s cubic-bezier(0.37, 0, 0.63, 1) infinite',
-        'emerge': 'emerge 0.8s cubic-bezier(0.4, 0, 0.1, 1) forwards',
-        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'dissolve': 'dissolve 0.6s cubic-bezier(0.4, 0, 0.1, 1) forwards',
+        drift: 'drift 30s ease-in-out infinite',
+        'fade-in': 'fade-in 0.6s ease-out forwards',
+        'fade-up': 'fade-up 0.6s ease-out forwards',
       },
       keyframes: {
-        'organic-float': {
-          '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
-          '25%': { transform: 'translateY(-8px) rotate(0.5deg)' },
-          '50%': { transform: 'translateY(-15px) rotate(-0.5deg)' },
-          '75%': { transform: 'translateY(-8px) rotate(0.3deg)' },
+        drift: {
+          '0%, 100%': { transform: 'translate(0, 0) scale(1)', opacity: '0.3' },
+          '25%': { transform: 'translate(2%, -1%) scale(1.02)', opacity: '0.4' },
+          '50%': { transform: 'translate(-1%, 2%) scale(0.98)', opacity: '0.35' },
+          '75%': { transform: 'translate(1%, -2%) scale(1.01)', opacity: '0.25' },
         },
-        'cellular-breathe': {
-          '0%, 100%': { transform: 'scale(1) translate(0, 0)', opacity: '0.6' },
-          '33%': { transform: 'scale(1.1) translate(5%, -3%)', opacity: '0.8' },
-          '66%': { transform: 'scale(0.95) translate(-3%, 5%)', opacity: '0.5' },
+        'fade-in': {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
         },
-        'emerge': {
-          '0%': { opacity: '0', transform: 'translateY(40px) scale(0.95)', filter: 'blur(10px)' },
-          '100%': { opacity: '1', transform: 'translateY(0) scale(1)', filter: 'blur(0)' },
+        'fade-up': {
+          from: { opacity: '0', transform: 'translateY(20px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
         },
-        'dissolve': {
-          '0%': { clipPath: 'inset(0 0 0 0)', opacity: '1' },
-          '100%': { clipPath: 'inset(0 0 100% 0)', opacity: '0' },
-        },
-      },
-      backdropBlur: {
-        xs: '2px',
-        '3xl': '64px',
-      },
-      transitionTimingFunction: {
-        'organic': 'cubic-bezier(0.4, 0, 0.1, 1)',
-        'breathe': 'cubic-bezier(0.37, 0, 0.63, 1)',
-      },
-      boxShadow: {
-        'void': '0 8px 32px rgba(0, 0, 0, 0.8)',
-        'glow-purple': '0 0 40px rgba(107, 74, 139, 0.3)',
-        'glow-cellular': '0 0 60px rgba(74, 124, 184, 0.2)',
-        'inset-light': 'inset 0 1px 0 rgba(255, 255, 255, 0.05)',
       },
     },
   },
   plugins: [],
-}
+};
 
-export default config
+export default config;

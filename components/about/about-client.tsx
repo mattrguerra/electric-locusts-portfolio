@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight, Instagram, Facebook } from 'lucide-react';
+import { ArrowRight, ArrowDown, Instagram, Facebook } from 'lucide-react';
 
 // Threads icon component
 const ThreadsIcon = ({ className }: { className?: string }) => (
@@ -40,14 +40,14 @@ const timeline = [
 
 const socialLinks = [
   {
-    icon: Facebook,
-    href: 'https://facebook.com/electriclocusts',
-    label: 'Facebook',
-  },
-  {
     icon: Instagram,
     href: 'https://instagram.com/electriclocusts',
     label: 'Instagram',
+  },
+  {
+    icon: Facebook,
+    href: 'https://facebook.com/electriclocusts',
+    label: 'Facebook',
   },
   {
     icon: ThreadsIcon,
@@ -58,95 +58,129 @@ const socialLinks = [
 
 export default function AboutClient() {
   return (
-    <div className="min-h-screen pt-32 pb-24 bg-void">
-      {/* Background texture */}
-      <div className="organic-texture" />
-
-      {/* Floating cellular shapes */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -right-32 w-[500px] h-[500px] rounded-full blur-[150px] bg-cellular-purple/10 animate-cellular-breathe" />
-        <div
-          className="absolute bottom-1/4 -left-32 w-[400px] h-[400px] rounded-full blur-[120px] bg-cellular-blue/8 animate-cellular-breathe"
-          style={{ animationDelay: '-12s' }}
-        />
+    <div className="min-h-screen bg-[#0a0a0a]">
+      {/* Atmospheric haze */}
+      <div className="haze">
+        <div className="haze-layer haze-1" />
+        <div className="haze-layer haze-2" />
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Page header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-20 text-center"
-        >
-          <span className="text-intimate text-sm tracking-widest uppercase block mb-4">
-            about the artist
-          </span>
-          <h1 className="text-5xl md:text-6xl font-display font-light text-white/90 tracking-tight">
-            Matthew Guerra
-          </h1>
-        </motion.div>
+      {/* Hero section with self-portrait placeholder */}
+      <section className="relative min-h-[70vh] flex items-center pt-20">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8 w-full relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Left - Text */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="space-y-6"
+            >
+              <span className="text-label text-gray-600 block">The Artist Behind</span>
+              <h1 className="font-display text-display text-white leading-none">
+                Who Is<br />Electric<br />Locusts?
+              </h1>
+              <p className="text-gray-400 text-lg max-w-md leading-relaxed">
+                Matthew Guerra. Austin-based visual artist exploring mental illness, identity,
+                and the evidence we leave behind.
+              </p>
+            </motion.div>
 
-        {/* Artist bio section */}
+            {/* Right - Self portrait placeholder */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="aspect-[3/4] bg-gray-900 rounded overflow-hidden">
+                {/* Placeholder for self portrait */}
+                <img
+                  src="/portfolio/self_annihilation/1.jpg"
+                  alt="Matthew Guerra"
+                  className="w-full h-full object-cover opacity-80"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="mb-24"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.8 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
         >
-          <div className="space-y-6 text-white/50 text-lg font-light leading-relaxed">
-            <p>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+            className="flex flex-col items-center gap-2"
+          >
+            <span className="text-[10px] tracking-[0.2em] uppercase text-gray-600">
+              Scroll to read
+            </span>
+            <ArrowDown className="w-4 h-4 text-gray-600" />
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* Bio section */}
+      <section className="py-24 relative z-10">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            <p className="text-gray-300 text-xl leading-relaxed">
               My whole life I have had an unstable sense of identity. Trying to find where I fit in
               the world has caused me tremendous strife—an obsession that has shaped everything I
-              create. How can you accomplish anything meaningful when you don&apos;t even know who
-              you are?
+              create.
             </p>
-            <p>
+            <p className="text-gray-400 text-lg leading-relaxed">
               I work across photography, video art, mixed media, and alternative processes like
               cyanotype printing. My practice began with medium format film and has evolved to
               include scratching and burning my own image from negatives, handmade artist books,
               video installations, and portrait series that explore gratitude, masculinity, and the
               weight of depression.
             </p>
-            <p>
+            <p className="text-gray-400 text-lg leading-relaxed">
               Living with bipolar disorder, anxiety, OCD, and ADHD has left me broken and confused
               at times—but it has also given me something urgent to say. I believe that art has the
-              power to help people feel less alone. If even one person views my work and decides to
-              fight for mental health advocacy, then every painful moment of its creation will have
-              been worth it.
+              power to help people feel less alone.
             </p>
-          </div>
-        </motion.div>
+          </motion.div>
 
-        {/* Artist Statement - Featured quote */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-24 relative"
-        >
-          {/* Decorative lines */}
-          <div className="absolute left-0 top-0 w-12 h-px bg-gradient-to-r from-cellular-purple/40 to-transparent" />
-          <div className="absolute right-0 bottom-0 w-12 h-px bg-gradient-to-l from-cellular-purple/40 to-transparent" />
+          {/* Featured quote */}
+          <motion.blockquote
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="my-16 py-8 border-l-2 border-gray-700 pl-8"
+          >
+            <p className="text-xl text-white/80 font-display italic leading-relaxed">
+              &ldquo;If even one person views my work and decides to fight for mental health
+              advocacy, then every painful moment of its creation will have been worth it.&rdquo;
+            </p>
+          </motion.blockquote>
+        </div>
+      </section>
 
-          <div className="py-12 px-6 md:px-12">
-            <blockquote className="text-xl md:text-2xl text-white/70 font-light leading-relaxed italic text-center">
-              &ldquo;Through my art, I delve into the darkest parts of my life—not to dwell there,
-              but to create powerful images that speak to the importance of mental health care. What
-              started as destruction became transformation.&rdquo;
-            </blockquote>
-          </div>
-        </motion.div>
-
-        {/* Mediums & Process */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mb-24"
-        >
-          <span className="text-intimate text-sm tracking-widest uppercase block mb-8 text-center">
-            mediums & process
-          </span>
+      {/* Mediums section */}
+      <section className="py-24 border-t border-gray-800/50 relative z-10">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <span className="text-label text-gray-600 block mb-4">Process</span>
+            <h2 className="font-display text-3xl text-white">How I Work</h2>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
@@ -177,133 +211,86 @@ export default function AboutClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="glass-card p-6"
+                className="card p-6"
               >
-                <h4 className="text-white/80 font-display font-light mb-2">{medium.title}</h4>
-                <p className="text-white/40 text-sm font-light">{medium.description}</p>
+                <h4 className="text-white font-display text-lg mb-2">{medium.title}</h4>
+                <p className="text-gray-500 text-sm leading-relaxed">{medium.description}</p>
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </div>
+      </section>
 
-        {/* Timeline */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mb-24"
-        >
-          <span className="text-intimate text-sm tracking-widest uppercase block mb-8 text-center">
-            creative journey
-          </span>
+      {/* Timeline section */}
+      <section className="py-24 border-t border-gray-800/50 relative z-10">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <span className="text-label text-gray-600 block mb-4">Journey</span>
+            <h2 className="font-display text-3xl text-white">Creative Timeline</h2>
+          </motion.div>
 
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-4 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-px bg-gradient-to-b from-cellular-purple/40 via-cellular-blue/30 to-transparent" />
-
-            <div className="space-y-12">
-              {timeline.map((item, index) => (
-                <motion.div
-                  key={item.year}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className={`relative flex items-start gap-8 ${
-                    index % 2 === 0 ? 'md:flex-row-reverse' : ''
-                  }`}
-                >
-                  {/* Content - left side on desktop for even items */}
-                  <div
-                    className={`flex-1 hidden md:block ${index % 2 === 0 ? 'text-right' : ''}`}
-                  >
-                    {index % 2 === 0 && (
-                      <div className="glass-card p-6 inline-block text-left">
-                        <span className="text-cellular-purple text-sm font-medium tracking-wide">
-                          {item.year}
-                        </span>
-                        <h4 className="text-lg font-display font-light text-white mt-1">
-                          {item.title}
-                        </h4>
-                        <p className="text-white/40 text-sm mt-2 font-light">{item.description}</p>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Dot */}
-                  <div className="w-3 h-3 rounded-full bg-cellular-purple/60 border-2 border-void flex-shrink-0 mt-2 z-10" />
-
-                  {/* Content - right side on desktop for odd items, always on mobile */}
-                  <div className="flex-1">
-                    <div className="glass-card p-6 md:hidden">
-                      <span className="text-cellular-purple text-sm font-medium tracking-wide">
-                        {item.year}
-                      </span>
-                      <h4 className="text-lg font-display font-light text-white mt-1">
-                        {item.title}
-                      </h4>
-                      <p className="text-white/40 text-sm mt-2 font-light">{item.description}</p>
-                    </div>
-                    {index % 2 !== 0 && (
-                      <div className="glass-card p-6 hidden md:block">
-                        <span className="text-cellular-purple text-sm font-medium tracking-wide">
-                          {item.year}
-                        </span>
-                        <h4 className="text-lg font-display font-light text-white mt-1">
-                          {item.title}
-                        </h4>
-                        <p className="text-white/40 text-sm mt-2 font-light">{item.description}</p>
-                      </div>
-                    )}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Social links */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mb-24 text-center"
-        >
-          <span className="text-intimate text-sm tracking-widest uppercase block mb-6">
-            connect
-          </span>
-          <div className="flex justify-center gap-4">
-            {socialLinks.map((social) => (
-              <motion.a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05, y: -2 }}
-                className="p-4 rounded-xl text-white/30 hover:text-white/60 hover:bg-white/5 transition-all duration-300"
-                aria-label={social.label}
+          <div className="space-y-8">
+            {timeline.map((item, index) => (
+              <motion.div
+                key={item.year}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="flex gap-6"
               >
-                <social.icon className="w-6 h-6" />
-              </motion.a>
+                <div className="flex-shrink-0 w-16">
+                  <span className="text-gray-600 text-sm font-medium">{item.year}</span>
+                </div>
+                <div className="pb-8 border-l border-gray-800 pl-6">
+                  <h4 className="text-white font-display text-lg mb-2">{item.title}</h4>
+                  <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
+                </div>
+              </motion.div>
             ))}
           </div>
-        </motion.div>
+        </div>
+      </section>
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <Link href="/contact">
-            <button className="btn-dissolution group inline-flex items-center gap-3">
-              <span>Get in Touch</span>
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </button>
-          </Link>
-        </motion.div>
-      </div>
+      {/* Connect section */}
+      <section className="py-24 border-t border-gray-800/50 relative z-10">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            <span className="text-label text-gray-600 block">Connect</span>
+            <div className="flex justify-center gap-4">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-gray-500 hover:text-white transition-all"
+                  aria-label={social.label}
+                >
+                  <social.icon className="w-5 h-5" />
+                </a>
+              ))}
+            </div>
+
+            <div className="pt-8">
+              <Link href="/contact" className="btn-primary inline-flex items-center gap-3 group">
+                <span>Get in Touch</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 }
