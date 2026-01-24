@@ -80,7 +80,7 @@ export default function HeroSection() {
           <motion.div
             key={activeSeries.slug}
             initial={{ opacity: 0 }}
-            animate={{ opacity: 0.4 }}
+            animate={{ opacity: 0.35 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.5, ease: 'easeInOut' }}
             className="absolute inset-0"
@@ -89,21 +89,14 @@ export default function HeroSection() {
               src={activeSeries.image}
               alt=""
               className="w-full h-full object-cover"
-              style={{ filter: 'grayscale(30%) contrast(1.1)' }}
+              style={{ filter: 'grayscale(40%) contrast(1.1)' }}
             />
           </motion.div>
         </AnimatePresence>
 
-        {/* Gradient overlays for depth and readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50" />
-      </div>
-
-      {/* Atmospheric haze */}
-      <div className="haze">
-        <div className="haze-layer haze-1" />
-        <div className="haze-layer haze-2" />
-        <div className="haze-layer haze-3" />
+        {/* Strong gradient overlays for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/70" />
       </div>
 
       {/* Content */}
@@ -119,8 +112,8 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <span className="text-label text-gray-500 block mb-4">Visual Artist</span>
-              <h1 className="font-display text-display text-white leading-none">
+              <span className="text-xs tracking-[0.2em] uppercase text-gray-400 block mb-4">Visual Artist</span>
+              <h1 className="font-display text-display text-white leading-none drop-shadow-lg">
                 Electric<br />Locusts
               </h1>
             </motion.div>
@@ -129,7 +122,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-body-lg text-gray-400 max-w-md"
+              className="text-lg text-gray-200 max-w-md leading-relaxed"
             >
               Photography and mixed media exploring mental illness,
               identity dissolution, and the evidence we leave behind.
@@ -159,8 +152,8 @@ export default function HeroSection() {
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
           >
-            <div className="space-y-3">
-              <span className="text-label text-gray-600 block">Explore Series</span>
+            <div className="bg-black/50 backdrop-blur-sm rounded p-6 border border-white/10">
+              <span className="text-xs tracking-[0.2em] uppercase text-gray-400 block mb-4">Explore Series</span>
 
               <div className="space-y-1">
                 {series.map((s, index) => (
@@ -170,14 +163,14 @@ export default function HeroSection() {
                     onMouseEnter={() => setActiveIndex(index)}
                     className={`w-full text-left px-4 py-3 rounded transition-all duration-300 group ${
                       activeIndex === index
-                        ? 'bg-white/5'
-                        : 'hover:bg-white/[0.02]'
+                        ? 'bg-white/10'
+                        : 'hover:bg-white/5'
                     }`}
                   >
                     <div className="flex items-center justify-between">
                       <span
                         className={`font-display text-lg transition-colors duration-300 ${
-                          activeIndex === index ? 'text-white' : 'text-gray-500'
+                          activeIndex === index ? 'text-white' : 'text-gray-400'
                         }`}
                       >
                         {s.title}
@@ -188,7 +181,7 @@ export default function HeroSection() {
                           opacity: activeIndex === index ? 1 : 0,
                           x: activeIndex === index ? 0 : -10,
                         }}
-                        className="text-gray-600 text-sm"
+                        className="text-gray-400 text-sm"
                       >
                         →
                       </motion.span>
@@ -200,7 +193,7 @@ export default function HeroSection() {
                           animate={{ opacity: 1, height: 'auto' }}
                           exit={{ opacity: 0, height: 0 }}
                           transition={{ duration: 0.2 }}
-                          className="text-gray-600 text-sm mt-1"
+                          className="text-gray-400 text-sm mt-1"
                         >
                           {s.tagline}
                         </motion.p>
@@ -212,7 +205,7 @@ export default function HeroSection() {
 
               <Link
                 href={`/portfolio/${activeSeries.slug}`}
-                className="inline-flex items-center gap-2 text-gray-500 hover:text-white transition-colors duration-300 text-sm mt-4 group"
+                className="inline-flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300 text-sm mt-4 group"
               >
                 <span>View {activeSeries.title}</span>
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
@@ -222,7 +215,7 @@ export default function HeroSection() {
         </div>
       </motion.div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator - positioned to not overlap with image */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -232,12 +225,12 @@ export default function HeroSection() {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-          className="flex flex-col items-center gap-3"
+          className="flex flex-col items-center gap-3 bg-black/60 px-4 py-2 rounded backdrop-blur-sm"
         >
-          <span className="text-[10px] tracking-[0.2em] uppercase text-gray-600">
+          <span className="text-[10px] tracking-[0.2em] uppercase text-gray-300">
             Scroll
           </span>
-          <ArrowDown className="w-4 h-4 text-gray-600" />
+          <ArrowDown className="w-4 h-4 text-gray-300" />
         </motion.div>
       </motion.div>
 
@@ -249,7 +242,7 @@ export default function HeroSection() {
               key={index}
               onClick={() => setActiveIndex(index)}
               className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
-                activeIndex === index ? 'bg-white w-4' : 'bg-gray-600'
+                activeIndex === index ? 'bg-white w-4' : 'bg-gray-500'
               }`}
             />
           ))}

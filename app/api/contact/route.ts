@@ -38,42 +38,42 @@ export async function POST(request: Request) {
 
     // Send email notification to both recipients
     const htmlBody = `
-      <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: linear-gradient(135deg, #1a0a2e 0%, #16213e 100%); padding: 40px; border-radius: 16px;">
-        <div style="text-align: center; margin-bottom: 30px;">
-          <h1 style="color: #8b5cf6; margin: 0; font-size: 28px;">⚡ Electric Locusts</h1>
-          <p style="color: rgba(255,255,255,0.6); margin-top: 5px;">New Contact Form Submission</p>
+      <div style="font-family: -apple-system, sans-serif; max-width: 600px; margin: 0 auto; background: #0a0a0a; padding: 40px; border-radius: 8px; border: 1px solid #333;">
+        <div style="margin-bottom: 30px;">
+          <h1 style="color: #fff; margin: 0; font-size: 24px; font-weight: 400;">Electric Locusts</h1>
+          <p style="color: #888; margin-top: 5px; font-size: 14px;">New Contact Form Submission</p>
         </div>
-        
-        <div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 24px; margin-bottom: 20px;">
+
+        <div style="background: #141414; border: 1px solid #333; border-radius: 4px; padding: 24px; margin-bottom: 20px;">
           <table style="width: 100%; border-collapse: collapse;">
             <tr>
-              <td style="padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
-                <span style="color: rgba(255,255,255,0.5); font-size: 12px; text-transform: uppercase;">From</span><br>
-                <span style="color: #fff; font-size: 16px; font-weight: 600;">${name ?? ''}</span>
+              <td style="padding: 12px 0; border-bottom: 1px solid #333;">
+                <span style="color: #666; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;">From</span><br>
+                <span style="color: #fff; font-size: 16px;">${name ?? ''}</span>
               </td>
             </tr>
             <tr>
-              <td style="padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
-                <span style="color: rgba(255,255,255,0.5); font-size: 12px; text-transform: uppercase;">Email</span><br>
-                <a href="mailto:${email ?? ''}" style="color: #8b5cf6; font-size: 16px; text-decoration: none;">${email ?? ''}</a>
+              <td style="padding: 12px 0; border-bottom: 1px solid #333;">
+                <span style="color: #666; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;">Email</span><br>
+                <a href="mailto:${email ?? ''}" style="color: #bbb; font-size: 16px; text-decoration: none;">${email ?? ''}</a>
               </td>
             </tr>
             <tr>
-              <td style="padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
-                <span style="color: rgba(255,255,255,0.5); font-size: 12px; text-transform: uppercase;">Subject</span><br>
+              <td style="padding: 12px 0; border-bottom: 1px solid #333;">
+                <span style="color: #666; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;">Subject</span><br>
                 <span style="color: #fff; font-size: 16px;">${subject ?? 'Not specified'}</span>
               </td>
             </tr>
             <tr>
               <td style="padding: 12px 0;">
-                <span style="color: rgba(255,255,255,0.5); font-size: 12px; text-transform: uppercase;">Message</span><br>
-                <div style="color: rgba(255,255,255,0.8); font-size: 15px; line-height: 1.6; margin-top: 8px; white-space: pre-wrap;">${message ?? ''}</div>
+                <span style="color: #666; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;">Message</span><br>
+                <div style="color: #ccc; font-size: 15px; line-height: 1.6; margin-top: 8px; white-space: pre-wrap;">${message ?? ''}</div>
               </td>
             </tr>
           </table>
         </div>
-        
-        <div style="text-align: center; color: rgba(255,255,255,0.4); font-size: 12px;">
+
+        <div style="text-align: center; color: #555; font-size: 12px;">
           Submitted on ${new Date()?.toLocaleString?.('en-US', { dateStyle: 'full', timeStyle: 'short' }) ?? ''}
         </div>
       </div>
@@ -114,7 +114,7 @@ export async function POST(request: Request) {
       console.error('Primary email error:', err);
     }
 
-    // Send to CC recipient: matthewrguerrra@gmail.com
+    // Send to CC recipient: matthewrguerra@gmail.com
     try {
       const ccResponse = await fetch('https://apps.abacus.ai/api/sendNotificationEmail', {
         method: 'POST',
@@ -126,7 +126,7 @@ export async function POST(request: Request) {
           subject: `New Contact: ${subject ?? 'Website Inquiry'} from ${name ?? 'Visitor'}`,
           body: htmlBody,
           is_html: true,
-          recipient_email: 'matthewrguerrra@gmail.com',
+          recipient_email: 'matthewrguerra@gmail.com',
           sender_email: appUrl ? `noreply@${new URL(appUrl)?.hostname ?? 'electriclocusts.com'}` : 'noreply@electriclocusts.com',
           sender_alias: appName,
         }),
@@ -137,6 +137,41 @@ export async function POST(request: Request) {
       }
     } catch (err) {
       console.error('CC email error:', err);
+    }
+
+    // Send SMS notification via Twilio (if configured)
+    const twilioSid = process.env.TWILIO_ACCOUNT_SID;
+    const twilioAuth = process.env.TWILIO_AUTH_TOKEN;
+    const twilioFrom = process.env.TWILIO_PHONE_NUMBER;
+    const twilioTo = process.env.SMS_NOTIFICATION_NUMBER; // Your phone: 832-330-2403
+
+    if (twilioSid && twilioAuth && twilioFrom && twilioTo) {
+      try {
+        const smsMessage = `Electric Locusts: New ${subject || 'inquiry'} from ${name} (${email}). Check email for details.`;
+
+        const twilioResponse = await fetch(
+          `https://api.twilio.com/2010-04-01/Accounts/${twilioSid}/Messages.json`,
+          {
+            method: 'POST',
+            headers: {
+              'Authorization': 'Basic ' + Buffer.from(`${twilioSid}:${twilioAuth}`).toString('base64'),
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+              From: twilioFrom,
+              To: twilioTo,
+              Body: smsMessage,
+            }),
+          }
+        );
+
+        if (!twilioResponse.ok) {
+          const twilioError = await twilioResponse.text();
+          console.error('Twilio SMS failed:', twilioError);
+        }
+      } catch (err) {
+        console.error('SMS notification error:', err);
+      }
     }
 
     return NextResponse.json({

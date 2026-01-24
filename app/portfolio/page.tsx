@@ -69,15 +69,9 @@ const series = [
 export default function PortfolioPage() {
   return (
     <div className="min-h-screen pt-20 pb-16 bg-black">
-      {/* Subtle atmospheric haze */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none opacity-30">
-        <div className="haze-layer absolute top-0 left-0 w-[600px] h-[600px] rounded-full blur-[200px] bg-gray-800" />
-        <div className="haze-layer-delayed absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full blur-[180px] bg-gray-900" />
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Minimal header */}
-        <header className="mb-12">
+        <header className="mb-10">
           <h1 className="font-display text-4xl md:text-5xl text-white tracking-tight">
             Series
           </h1>
@@ -99,18 +93,18 @@ export default function PortfolioPage() {
                   loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                {/* Gradient overlay for text legibility */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80" />
+                {/* Strong gradient overlay for text legibility on any image */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/20" />
 
                 {/* Content overlay */}
                 <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                  <span className="text-gray-500 text-xs tracking-widest uppercase mb-2">
+                  <span className="text-gray-400 text-xs tracking-widest uppercase mb-2">
                     {s.medium} · {s.year}
                   </span>
-                  <h2 className="font-display text-2xl text-white mb-2 group-hover:text-gray-300 transition-colors">
+                  <h2 className="font-display text-2xl text-white mb-2 group-hover:text-gray-200 transition-colors drop-shadow-lg">
                     {s.title}
                   </h2>
-                  <p className="text-gray-400 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-gray-300 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {s.description}
                   </p>
                 </div>
