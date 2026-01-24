@@ -105,13 +105,13 @@ export default function FeaturedWork() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
                 >
-                  <span className="text-cellular-purple text-xs font-medium tracking-widest uppercase transition-opacity duration-500 group-hover:opacity-0">
+                  <span className="text-cellular-purple text-sm font-medium tracking-widest uppercase transition-opacity duration-500 group-hover:opacity-0">
                     {featuredProjects[0].category}
                   </span>
                   <h3 className="text-3xl md:text-4xl font-display font-light text-white mt-2 mb-3 group-hover:text-white/80 transition-opacity duration-500 group-hover:opacity-0">
                     {featuredProjects[0].title}
                   </h3>
-                  <p className="text-white/40 text-sm md:text-base max-w-md transition-opacity duration-500 group-hover:opacity-0">
+                  <p className="text-white/40 text-xl md:text-base max-w-md transition-opacity duration-500 group-hover:opacity-0">
                     {featuredProjects[0].description}
                   </p>
                 </motion.div>
@@ -152,10 +152,10 @@ export default function FeaturedWork() {
 
                   {/* Content */}
                   <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <span className="text-white/30 text-xs tracking-widest uppercasetransition-opacity duration-500 group-hover:opacity-0">
+                    <span className="text-white/30 text-sm tracking-widest uppercasetransition-opacity duration-500 group-hover:opacity-0">
                       {project.category}
                     </span>
-                    <h3 className="text-lg font-display font-light text-white mt-1 group-hover:text-white/80 transition-opacity duration-500 group-hover:opacity-0">
+                    <h3 className="text-xl font-display font-light text-white mt-1 group-hover:text-white/80 transition-opacity duration-500 group-hover:opacity-0">
                       {project.title}
                     </h3>
                   </div>
