@@ -72,7 +72,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${ibmPlex.variable} ${instrumentSerif.variable}`}>
-      <body className="antialiased min-h-screen flex flex-col bg-[#0a0a0a] text-white">
+      <body className="antialiased min-h-screen flex flex-col bg-[#0a0a0a] text-[gray]">
         <Navigation />
         <main className="flex-grow relative z-10">{children}</main>
         <Footer />
