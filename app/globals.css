@@ -32,9 +32,8 @@
   --blood: #6b2020;
   --wound: #4a1818;
 
-  /* Typography */
-  --font-display: var(--font-display), Instrument-Serif, serif;
-  --font-body: var(--font-body), -apple-system, sans-serif;
+  /* Typography - CSS variables injected by Next.js fonts */
+  /* No need to redefine, they're already set on html element */
 }
 
 /* ===== BASE ===== */
