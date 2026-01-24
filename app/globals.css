@@ -33,7 +33,7 @@
   --wound: #4a1818;
 
   /* Typography */
-  --font-display: var(--font-display), Georgia, serif;
+  --font-display: var(--font-display), Instrument_Serif, serif;
   --font-body: var(--font-body), -apple-system, sans-serif;
 }
 
