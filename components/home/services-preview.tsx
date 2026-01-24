@@ -83,7 +83,7 @@ export default function ServicesPreview() {
                   {service?.icon && <service.icon className={`w-6 h-6 ${service?.color ?? 'text-white'}`} />}
                 </div>
                 <h3 className="text-xl font-display text-white mb-2">{service?.title ?? ''}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">{service?.description ?? ''}</p>
+                <p className="text-white/70 text-sm leading-relaxed">{service?.description ?? ''}</p>
               </motion.div>
             </GlassCard>
           )) ?? null}

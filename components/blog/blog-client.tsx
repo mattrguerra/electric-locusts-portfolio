@@ -138,7 +138,7 @@ export default function BlogClient() {
                     <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary-300 transition-colors line-clamp-2">
                       {post?.title ?? ''}
                     </h3>
-                    <p className="text-white/60 text-sm line-clamp-2 mb-4">
+                    <p className="text-white/70 text-sm line-clamp-2 mb-4">
                       {post?.excerpt ?? ''}
                     </p>
 
@@ -147,7 +147,7 @@ export default function BlogClient() {
                         {post?.tags?.slice?.(0, 3)?.map?.((tag) => (
                           <span
                             key={tag}
-                            className="px-2 py-0.5 rounded text-xs text-white/50 bg-white/5"
+                            className="px-2 py-0.5 rounded text-xs text-white/60 bg-white/5"
                           >
                             #{tag}
                           </span>
@@ -155,7 +155,7 @@ export default function BlogClient() {
                       </div>
                     )}
 
-                    <div className="flex items-center justify-between text-white/40 text-xs">
+                    <div className="flex items-center justify-between text-white/50 text-xs">
                       <span className="flex items-center gap-1">
                         <Calendar className="w-3 h-3" />
                         {formatDate(post?.publishedAt)}

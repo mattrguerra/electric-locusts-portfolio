@@ -45,7 +45,7 @@ export default function ContactCTA() {
             <span className="gradient-text">collaboration</span>?
           </h2>
 
-          <p className="text-white/50 text-lg max-w-xl mx-auto font-light leading-relaxed">
+          <p className="text-white/70 text-lg max-w-xl mx-auto font-light leading-relaxed">
             Whether it&apos;s a gallery inquiry, commission, or simply a
             conversation about art and the human experience, I&apos;d love to
             hear from you.

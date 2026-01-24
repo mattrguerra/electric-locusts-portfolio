@@ -83,7 +83,7 @@ export default function BlogPostClient({ post, relatedPosts }: Props) {
             {post?.title ?? ''}
           </h1>
           
-          <div className="flex flex-wrap items-center gap-4 text-white/60 text-sm">
+          <div className="flex flex-wrap items-center gap-4 text-white/70 text-sm">
             <span className="flex items-center gap-2">
               <User className="w-4 h-4" />
               {post?.author ?? 'Matt Guerra'}
@@ -135,11 +135,11 @@ export default function BlogPostClient({ post, relatedPosts }: Props) {
           <div 
             className="prose prose-lg prose-invert max-w-none
               prose-headings:text-white prose-headings:font-display
-              prose-p:text-white/70 prose-p:leading-relaxed
+              prose-p:text-white/80 prose-p:leading-relaxed
               prose-a:text-primary-400 prose-a:no-underline hover:prose-a:underline
               prose-strong:text-white
-              prose-ul:text-white/70 prose-ol:text-white/70
-              prose-blockquote:border-primary-500 prose-blockquote:text-white/60 prose-blockquote:italic"
+              prose-ul:text-white/80 prose-ol:text-white/80
+              prose-blockquote:border-primary-500 prose-blockquote:text-white/75 prose-blockquote:italic"
             dangerouslySetInnerHTML={{ __html: post?.content ?? '' }}
           />
         </motion.article>
