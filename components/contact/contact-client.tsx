@@ -83,31 +83,24 @@ export default function ContactClient() {
   };
 
   return (
-    <div className="min-h-screen pt-32 pb-24 bg-[#0a0a0a]">
-      {/* Atmospheric haze */}
-      <div className="haze">
-        <div className="haze-layer haze-1" />
-        <div className="haze-layer haze-2" />
-      </div>
-
+    <div className="min-h-screen pt-24 pb-8 bg-black">
       <div className="max-w-5xl mx-auto px-6 lg:px-8 relative z-10">
-        {/* Page header */}
+        {/* Page header - compact */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-16"
+          className="mb-8"
         >
-          <span className="text-label text-gray-600 block mb-4">Get in Touch</span>
-          <h1 className="font-display text-headline text-white mb-6">
+          <h1 className="font-display text-4xl md:text-5xl text-white mb-3">
             Let&apos;s Connect
           </h1>
-          <p className="text-gray-400 text-lg max-w-2xl leading-relaxed">
-            Gallery inquiries, commissions, collaborations—or simply a conversation about art and
+          <p className="text-gray-300 text-base max-w-2xl leading-relaxed">
+            Gallery inquiries, commissions, collaborations, or simply a conversation about art and
             mental health. I read every message personally.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -119,24 +112,24 @@ export default function ContactClient() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="card p-12 text-center"
+                className="bg-gray-900 border border-gray-800 rounded p-10 text-center"
               >
-                <div className="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center mx-auto mb-6">
-                  <CheckCircle className="w-8 h-8 text-gray-400" />
+                <div className="w-14 h-14 rounded-full bg-gray-800 flex items-center justify-center mx-auto mb-5">
+                  <CheckCircle className="w-7 h-7 text-gray-300" />
                 </div>
-                <h3 className="font-display text-2xl text-white mb-3">Message Received</h3>
-                <p className="text-gray-500 mb-8">
+                <h3 className="font-display text-2xl text-white mb-2">Message Received</h3>
+                <p className="text-gray-400 mb-6 text-sm">
                   Thank you for reaching out. I&apos;ll respond within 48 hours.
                 </p>
-                <button onClick={() => setStatus('idle')} className="btn-secondary">
+                <button onClick={() => setStatus('idle')} className="btn-secondary text-sm">
                   Send Another Message
                 </button>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-label text-gray-500 block mb-3">Name</label>
+                    <label className="text-xs tracking-[0.15em] uppercase text-gray-400 block mb-2">Name</label>
                     <input
                       type="text"
                       name="name"
@@ -148,7 +141,7 @@ export default function ContactClient() {
                     />
                   </div>
                   <div>
-                    <label className="text-label text-gray-500 block mb-3">Email</label>
+                    <label className="text-xs tracking-[0.15em] uppercase text-gray-400 block mb-2">Email</label>
                     <input
                       type="email"
                       name="email"
@@ -162,7 +155,7 @@ export default function ContactClient() {
                 </div>
 
                 <div>
-                  <label className="text-label text-gray-500 block mb-3">Inquiry Type</label>
+                  <label className="text-xs tracking-[0.15em] uppercase text-gray-400 block mb-2">Inquiry Type</label>
                   <select
                     name="subject"
                     value={formData.subject}
@@ -178,21 +171,21 @@ export default function ContactClient() {
                 </div>
 
                 <div>
-                  <label className="text-label text-gray-500 block mb-3">Message</label>
+                  <label className="text-xs tracking-[0.15em] uppercase text-gray-400 block mb-2">Message</label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    rows={6}
+                    rows={4}
                     className="input resize-none"
                     placeholder="Tell me what's on your mind..."
                   />
                 </div>
 
-                {/* Important note - now more visible */}
-                <div className="bg-gray-900/50 border border-gray-800 rounded p-4">
-                  <p className="text-gray-400 text-sm leading-relaxed">
+                {/* Note - better contrast */}
+                <div className="bg-gray-900 border border-gray-700 rounded p-3">
+                  <p className="text-gray-300 text-sm leading-relaxed">
                     For project inquiries, feel free to share details about your vision, timeline, and
                     any reference material. It helps me provide the most thoughtful response.
                   </p>
@@ -202,7 +195,7 @@ export default function ContactClient() {
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center gap-2 text-red-400/80 text-sm"
+                    className="flex items-center gap-2 text-red-400 text-sm"
                   >
                     <AlertCircle className="w-4 h-4" />
                     {errorMessage || 'Unable to send. Please try again.'}
@@ -230,57 +223,57 @@ export default function ContactClient() {
             )}
           </motion.div>
 
-          {/* Sidebar */}
+          {/* Sidebar - compact */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="space-y-8"
+            className="space-y-4"
           >
             {/* Direct Contact */}
-            <div className="card p-6">
-              <h3 className="text-label text-gray-500 mb-6">Direct Contact</h3>
+            <div className="bg-gray-900 border border-gray-800 rounded p-5">
+              <h3 className="text-xs tracking-[0.15em] uppercase text-gray-400 mb-4">Direct Contact</h3>
 
-              <div className="space-y-6">
+              <div className="space-y-4">
                 <a
                   href="mailto:mattguerra@electriclocusts.com"
-                  className="flex items-start gap-4 group"
+                  className="flex items-start gap-3 group"
                 >
-                  <div className="w-10 h-10 rounded bg-gray-800 flex items-center justify-center flex-shrink-0 group-hover:bg-gray-700 transition-colors">
+                  <div className="w-9 h-9 rounded bg-gray-800 flex items-center justify-center flex-shrink-0 group-hover:bg-gray-700 transition-colors">
                     <Mail className="w-4 h-4 text-gray-400" />
                   </div>
                   <div>
-                    <p className="text-gray-600 text-xs mb-1">Email</p>
-                    <p className="text-gray-300 group-hover:text-white transition-colors text-sm">
+                    <p className="text-gray-500 text-xs mb-0.5">Email</p>
+                    <p className="text-gray-200 group-hover:text-white transition-colors text-sm">
                       mattguerra@electriclocusts.com
                     </p>
                   </div>
                 </a>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded bg-gray-800 flex items-center justify-center flex-shrink-0">
+                <div className="flex items-start gap-3">
+                  <div className="w-9 h-9 rounded bg-gray-800 flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-4 h-4 text-gray-400" />
                   </div>
                   <div>
-                    <p className="text-gray-600 text-xs mb-1">Location</p>
-                    <p className="text-gray-300 text-sm">Austin, Texas</p>
+                    <p className="text-gray-500 text-xs mb-0.5">Location</p>
+                    <p className="text-gray-200 text-sm">Houston, Texas</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Social */}
-            <div className="card p-6">
-              <h3 className="text-label text-gray-500 mb-6">Follow</h3>
+            <div className="bg-gray-900 border border-gray-800 rounded p-5">
+              <h3 className="text-xs tracking-[0.15em] uppercase text-gray-400 mb-4">Follow</h3>
 
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2">
                 {socialLinks.map((social) => (
                   <a
                     key={social.label}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-11 h-11 rounded bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-gray-500 hover:text-white transition-all"
+                    className="w-10 h-10 rounded bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-gray-400 hover:text-white transition-all"
                     aria-label={social.label}
                   >
                     <social.icon className="w-5 h-5" />

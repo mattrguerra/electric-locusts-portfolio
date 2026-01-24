@@ -30,69 +30,69 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#0a0a0a] border-t border-gray-800/50">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+    <footer className="relative bg-[#0a0a0a] border-t border-gray-700">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
           {/* Brand */}
-          <div className="space-y-4">
-            <Link href="/" className="font-display text-xl text-white/90 hover:text-white transition-colors">
+          <div className="space-y-3">
+            <Link href="/" className="font-display text-xl text-white hover:text-gray-300 transition-colors">
               Electric Locusts
             </Link>
-            <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
+            <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
               Visual art exploring mental illness, identity, and the evidence we leave behind.
             </p>
           </div>
 
           {/* Navigation */}
-          <div className="space-y-4">
-            <span className="text-label text-gray-600 block">Navigate</span>
-            <nav className="flex flex-col gap-3">
-              <Link href="/portfolio" className="text-gray-400 hover:text-white transition-colors text-sm">
+          <div className="space-y-3">
+            <span className="text-xs tracking-[0.15em] uppercase text-gray-400 block">Navigate</span>
+            <nav className="flex flex-col gap-2">
+              <Link href="/portfolio" className="text-gray-300 hover:text-white transition-colors text-sm">
                 Work
               </Link>
-              <Link href="/about" className="text-gray-400 hover:text-white transition-colors text-sm">
+              <Link href="/about" className="text-gray-300 hover:text-white transition-colors text-sm">
                 About
               </Link>
-              <Link href="/contact" className="text-gray-400 hover:text-white transition-colors text-sm">
+              <Link href="/contact" className="text-gray-300 hover:text-white transition-colors text-sm">
                 Contact
               </Link>
             </nav>
           </div>
 
           {/* Contact */}
-          <div className="space-y-4">
-            <span className="text-label text-gray-600 block">Connect</span>
+          <div className="space-y-3">
+            <span className="text-xs tracking-[0.15em] uppercase text-gray-400 block">Connect</span>
             <a
               href="mailto:mattguerra@electriclocusts.com"
-              className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm group"
+              className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors text-sm group"
             >
               <Mail className="w-4 h-4" />
               <span>mattguerra@electriclocusts.com</span>
             </a>
-            <div className="flex items-center gap-4 pt-2">
+            <div className="flex items-center gap-4 pt-1">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-white transition-colors duration-300"
+                  className="text-gray-400 hover:text-white transition-colors duration-300"
                   aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5" />
                 </a>
               ))}
             </div>
-            <p className="text-gray-600 text-xs pt-2">Austin, Texas</p>
+            <p className="text-gray-400 text-sm pt-1">Houston, Texas</p>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-16 pt-8 border-t border-gray-800/50 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-600 text-xs">
+        <div className="mt-10 pt-6 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-3">
+          <p className="text-gray-500 text-xs">
             © {new Date().getFullYear()} Matthew Guerra. All rights reserved.
           </p>
-          <p className="text-gray-700 text-xs">
+          <p className="text-gray-500 text-xs">
             Photography · Mixed Media · Alternative Process
           </p>
         </div>

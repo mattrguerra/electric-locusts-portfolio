@@ -58,17 +58,11 @@ const socialLinks = [
 
 export default function AboutClient() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a]">
-      {/* Atmospheric haze */}
-      <div className="haze">
-        <div className="haze-layer haze-1" />
-        <div className="haze-layer haze-2" />
-      </div>
-
+    <div className="min-h-screen bg-black">
       {/* Hero section with self-portrait placeholder */}
-      <section className="relative min-h-[70vh] flex items-center pt-20">
+      <section className="relative min-h-[80vh] flex items-center pt-20">
         <div className="max-w-6xl mx-auto px-6 lg:px-8 w-full relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left - Text */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -76,12 +70,12 @@ export default function AboutClient() {
               transition={{ duration: 0.8 }}
               className="space-y-6"
             >
-              <span className="text-label text-gray-600 block">The Artist Behind</span>
+              <span className="text-xs tracking-[0.2em] uppercase text-gray-400 block">The Artist Behind</span>
               <h1 className="font-display text-display text-white leading-none">
                 Who Is<br />Electric<br />Locusts?
               </h1>
-              <p className="text-gray-400 text-lg max-w-md leading-relaxed">
-                Matthew Guerra. Austin-based visual artist exploring mental illness, identity,
+              <p className="text-gray-300 text-lg max-w-md leading-relaxed">
+                Matthew Guerra. Houston-based visual artist exploring mental illness, identity,
                 and the evidence we leave behind.
               </p>
             </motion.div>
@@ -94,7 +88,6 @@ export default function AboutClient() {
               className="relative"
             >
               <div className="aspect-[3/4] bg-gray-900 rounded overflow-hidden">
-                {/* Placeholder for self portrait */}
                 <img
                   src="/portfolio/self_annihilation/1.jpg"
                   alt="Matthew Guerra"
@@ -106,50 +99,50 @@ export default function AboutClient() {
           </div>
         </div>
 
-        {/* Scroll indicator */}
+        {/* Scroll indicator - with solid background for visibility */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.8 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
         >
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-            className="flex flex-col items-center gap-2"
+            className="flex flex-col items-center gap-2 bg-black/80 px-4 py-2 rounded backdrop-blur-sm"
           >
-            <span className="text-[10px] tracking-[0.2em] uppercase text-gray-600">
+            <span className="text-[10px] tracking-[0.2em] uppercase text-gray-300">
               Scroll to read
             </span>
-            <ArrowDown className="w-4 h-4 text-gray-600" />
+            <ArrowDown className="w-4 h-4 text-gray-300" />
           </motion.div>
         </motion.div>
       </section>
 
-      {/* Bio section */}
-      <section className="py-24 relative z-10">
+      {/* Bio section - reduced padding */}
+      <section className="py-16 relative z-10">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-6"
           >
-            <p className="text-gray-300 text-xl leading-relaxed">
+            <p className="text-gray-200 text-xl leading-relaxed">
               My whole life I have had an unstable sense of identity. Trying to find where I fit in
-              the world has caused me tremendous strife—an obsession that has shaped everything I
+              the world has caused me tremendous strife, an obsession that has shaped everything I
               create.
             </p>
-            <p className="text-gray-400 text-lg leading-relaxed">
+            <p className="text-gray-300 text-lg leading-relaxed">
               I work across photography, video art, mixed media, and alternative processes like
               cyanotype printing. My practice began with medium format film and has evolved to
               include scratching and burning my own image from negatives, handmade artist books,
               video installations, and portrait series that explore gratitude, masculinity, and the
               weight of depression.
             </p>
-            <p className="text-gray-400 text-lg leading-relaxed">
+            <p className="text-gray-300 text-lg leading-relaxed">
               Living with bipolar disorder, anxiety, OCD, and ADHD has left me broken and confused
-              at times—but it has also given me something urgent to say. I believe that art has the
+              at times, but it has also given me something urgent to say. I believe that art has the
               power to help people feel less alone.
             </p>
           </motion.div>
@@ -159,9 +152,9 @@ export default function AboutClient() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="my-16 py-8 border-l-2 border-gray-700 pl-8"
+            className="my-12 py-6 border-l-2 border-gray-600 pl-6"
           >
-            <p className="text-xl text-white/80 font-display italic leading-relaxed">
+            <p className="text-xl text-white font-display italic leading-relaxed">
               &ldquo;If even one person views my work and decides to fight for mental health
               advocacy, then every painful moment of its creation will have been worth it.&rdquo;
             </p>
@@ -169,20 +162,20 @@ export default function AboutClient() {
         </div>
       </section>
 
-      {/* Mediums section */}
-      <section className="py-24 border-t border-gray-800/50 relative z-10">
+      {/* Mediums section - reduced padding */}
+      <section className="py-16 border-t border-gray-800 relative z-10">
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="mb-12"
+            className="mb-8"
           >
-            <span className="text-label text-gray-600 block mb-4">Process</span>
+            <span className="text-xs tracking-[0.2em] uppercase text-gray-400 block mb-3">Process</span>
             <h2 className="font-display text-3xl text-white">How I Work</h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
               {
                 title: 'Medium Format Film',
@@ -211,30 +204,30 @@ export default function AboutClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="card p-6"
+                className="bg-gray-900 border border-gray-800 rounded p-5"
               >
                 <h4 className="text-white font-display text-lg mb-2">{medium.title}</h4>
-                <p className="text-gray-500 text-sm leading-relaxed">{medium.description}</p>
+                <p className="text-gray-400 text-sm leading-relaxed">{medium.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Timeline section */}
-      <section className="py-24 border-t border-gray-800/50 relative z-10">
+      {/* Timeline section - fixed contrast, no color banding */}
+      <section className="py-16 border-t border-gray-800 relative z-10">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="mb-12"
+            className="mb-8"
           >
-            <span className="text-label text-gray-600 block mb-4">Journey</span>
+            <span className="text-xs tracking-[0.2em] uppercase text-gray-400 block mb-3">Journey</span>
             <h2 className="font-display text-3xl text-white">Creative Timeline</h2>
           </motion.div>
 
-          <div className="space-y-8">
+          <div className="space-y-6">
             {timeline.map((item, index) => (
               <motion.div
                 key={item.year}
@@ -245,11 +238,11 @@ export default function AboutClient() {
                 className="flex gap-6"
               >
                 <div className="flex-shrink-0 w-16">
-                  <span className="text-gray-600 text-sm font-medium">{item.year}</span>
+                  <span className="text-gray-400 text-sm font-medium">{item.year}</span>
                 </div>
-                <div className="pb-8 border-l border-gray-800 pl-6">
+                <div className="pb-6 border-l border-gray-700 pl-6">
                   <h4 className="text-white font-display text-lg mb-2">{item.title}</h4>
-                  <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
+                  <p className="text-gray-400 text-sm leading-relaxed">{item.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -257,24 +250,24 @@ export default function AboutClient() {
         </div>
       </section>
 
-      {/* Connect section */}
-      <section className="py-24 border-t border-gray-800/50 relative z-10">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+      {/* Connect section - reduced negative space */}
+      <section className="py-16 border-t border-gray-800 relative z-10">
+        <div className="max-w-xl mx-auto px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-6"
           >
-            <span className="text-label text-gray-600 block">Connect</span>
-            <div className="flex justify-center gap-4">
+            <span className="text-xs tracking-[0.2em] uppercase text-gray-400 block">Connect</span>
+            <div className="flex justify-center gap-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-gray-500 hover:text-white transition-all"
+                  className="w-11 h-11 rounded bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-gray-400 hover:text-white transition-all"
                   aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5" />
@@ -282,7 +275,7 @@ export default function AboutClient() {
               ))}
             </div>
 
-            <div className="pt-8">
+            <div className="pt-4">
               <Link href="/contact" className="btn-primary inline-flex items-center gap-3 group">
                 <span>Get in Touch</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
