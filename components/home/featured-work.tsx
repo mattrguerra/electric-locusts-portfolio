@@ -83,7 +83,8 @@ export default function FeaturedWork() {
                   fill
                   className="object-cover transition-all duration-1000 ease-organic group-hover:scale-105 img-atmospheric"
                 />
-                
+
+                {/* Dark overlay - visible by default, fades on hover */}
                 <div className="absolute inset-0 bg-black/70 transition-opacity duration-500 group-hover:opacity-0" />
 
                 {/* Organic gradient overlays */}
@@ -107,7 +108,7 @@ export default function FeaturedWork() {
                   <span className="text-cellular-purple text-xs font-medium tracking-widest uppercase">
                     {featuredProjects[0].category}
                   </span>
-                  <h3 className="text-3xl md:text-4xl font-display font-light text-white mt-2 mb-3 group-hover:text-white/80 transition-colors duration-500">
+                  <h3 className="text-3xl md:text-4xl font-display font-light text-white mt-2 mb-3 group-hover:text-white/80 transition-opacity duration-500 group-hover:opacity-0">
                     {featuredProjects[0].title}
                   </h3>
                   <p className="text-white/40 text-sm md:text-base max-w-md">
@@ -139,6 +140,9 @@ export default function FeaturedWork() {
                       className="object-cover transition-all duration-700 ease-organic group-hover:scale-105 img-atmospheric"
                     />
 
+                    {/* Dark overlay - visible by default, fades on hover */}
+                    <div className="absolute inset-0 bg-black/70 transition-opacity duration-500 group-hover:opacity-0" />
+
                     {/* Gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-void via-void/30 to-transparent" />
 
@@ -151,7 +155,7 @@ export default function FeaturedWork() {
                     <span className="text-white/30 text-xs tracking-widest uppercase">
                       {project.category}
                     </span>
-                    <h3 className="text-lg font-display font-light text-white mt-1 group-hover:text-white/80 transition-colors duration-300">
+                    <h3 className="text-lg font-display font-light text-white mt-1 group-hover:text-white/80 transition-opacity duration-500 group-hover:opacity-0">
                       {project.title}
                     </h3>
                   </div>
