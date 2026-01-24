@@ -62,16 +62,16 @@ export default function MixedPage() {
           </h2>
           <div className="space-y-4 text-gray-300 leading-relaxed">
             <p>
-              Some experiences resist language. Bipolar mixed episodes exist in that space—where depression and mania collide simultaneously, creating a psychological state that feels impossible to describe.
+              Some experiences resist language. Bipolar mixed episodes exist in a debilitating space where depression and mania collide simultaneously, creating a psychological state that feels impossible to describe.
             </p>
             <p className="text-gray-400">
-              This is the only work I could create during one of the darkest periods of my life. The visual chaos, the competing energies, the sense of being pulled apart from the inside. When I couldn't find words for what I was experiencing, I turned to images.
+              This is the only work I could create during one of the darkest periods of my life. The visual chaos, competing energies, and sense of being pulled apart from the inside is one of the darkest experiences I have ever had the displeasure of enduring. When I couldn't find words for what I was experiencing, I turned to my camera.
             </p>
             <p className="text-gray-400">
-              Creating during crisis became a way to externalize internal chaos—to put something outside of myself that could hold what I couldn't contain alone.
+              Creating during crisis became a way to externalize the internal chaos and put feeling screaming to be acknowledged outside of myself. These images are are the lasting representation of that which I could not contain alone within myself.
             </p>
             <p className="text-gray-400">
-              I share this work because bipolar disorder remains deeply misunderstood. Mixed episodes in particular are rarely discussed, leaving those who experience them feeling isolated. You are not broken. You are not imagining it. And you are not the only one.
+              I share this work because bipolar disorder remains deeply misunderstood. Mixed episodes in particular are rarely discussed, leaving those who experience them feeling isolated. You are not broken, imagining it, and you are most certainly not the only one.
             </p>
           </div>
         </motion.div>

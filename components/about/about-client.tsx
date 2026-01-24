@@ -75,7 +75,7 @@ export default function AboutClient() {
                 Who Is<br />Electric<br />Locusts?
               </h1>
               <p className="text-gray-300 text-lg max-w-md leading-relaxed">
-                Matthew Guerra. Houston-based visual artist exploring mental illness, identity,
+                Matt Guerra. Houston-based visual artist exploring mental illness, identity,
                 and the evidence we leave behind.
               </p>
             </motion.div>
@@ -90,7 +90,7 @@ export default function AboutClient() {
               <div className="aspect-[3/4] bg-gray-900 rounded overflow-hidden">
                 <img
                   src="https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769261111/matt2_h3rqdm.jpg"
-                  alt="Matthew Guerra"
+                  alt="Matt Guerra"
                   className="w-full h-full object-cover opacity-80"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />

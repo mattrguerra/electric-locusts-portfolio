@@ -79,16 +79,16 @@ export default function DeconstructingMasculinityPage() {
           </h2>
           <div className="space-y-4 text-gray-300 leading-relaxed">
             <p>
-              The archetypal man in our society operates within impossibly narrow boundaries. To be considered valid, he must be cisgender and heterosexual. Stoic—never showing vulnerability. Dominant in all spaces.
+              The archetypal man in our society operates within impossibly narrow boundaries. To be considered valid, he must be cisgender, heterosexual, and stoic, never being afforded the permission to sit in vulnerability. He is expected to be dominant in all spaces.
             </p>
             <p className="text-gray-400">
               These expectations damage everyone. They create a culture where femininity is demonized and men are forbidden from accessing their full emotional range. They prevent men from seeking help for mental health struggles.
             </p>
             <p className="text-gray-400">
-              This portrait series presents men of varying races, gender expressions, and perspectives on what it means to identify as male. Each subject challenges the narrow archetype in their own way—through vulnerability, through softness, through simply existing outside the prescribed boundaries.
+              This portrait series presents men of varying races, gender expressions, and perspectives on what it means to identify as male. Each subject challenges the narrow archetype in their own way through the performance of vulnerability, softness, and simply existing outside their prescribed boundaries.
             </p>
             <p className="text-gray-400">
-              Masculinity doesn't have to mean emotional absence. Strength doesn't require suppression. This series imagines what manhood could look like if we allowed it to include the full spectrum of human experience.
+              Masculinity doesn't have to mean emotional absence. Nor does strength require suppression. This series imagines what masculinity could look like if we allowed it to include the full spectrum of human experience.
             </p>
           </div>
         </motion.div>

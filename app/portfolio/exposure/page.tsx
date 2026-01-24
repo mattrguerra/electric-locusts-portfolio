@@ -64,7 +64,7 @@ export default function ExposurePage() {
               Depression arrives slowly. The things you once enjoyed become objects of apathy. Getting out of bed feels like dragging weights that leave trails in the ground behind you.
             </p>
             <p className="text-gray-400">
-              But what depression does most profoundly is leave you feeling exposed. Naked and raw in your emotions, you begin to unravel—bit by bit, piece by piece—until there's nothing left to hide behind.
+              But what depression does most profoundly is leave you feeling exposed. Naked and raw in your emotions, you begin to unravel bit by bit, piece by piece, until there's nothing left but hollowness.
             </p>
             <p className="text-gray-400">
               I created this series because I needed people to understand this experience. I've fought depression for years, often feeling like no one around me could comprehend the magnitude of what I was carrying.

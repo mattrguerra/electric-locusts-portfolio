@@ -63,7 +63,7 @@ export default function FeaturedWork() {
             selected works
           </span>
           <h2 className="text-4xl md:text-5xl font-display font-light text-white/90 tracking-tight">
-            Exploring the <span className="gradient-text">fragmented self</span>
+            Exploring the <span className="gradient-text">Fragmented Self</span>
           </h2>
         </motion.div>
 

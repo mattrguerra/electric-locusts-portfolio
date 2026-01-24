@@ -76,16 +76,16 @@ export default function SelfAnnihilationPage() {
           </h2>
           <div className="space-y-4 text-gray-300 leading-relaxed">
             <p>
-              Identity has always been something I've struggled to define. The search for where I fit in the world has caused me tremendous strife—an obsession that has shaped my entire life.
+              Identity has always been something I've struggled to define. The search for where I fit in the world has caused me tremendous strife and an obsession that has shaped my entire life.
             </p>
             <p className="text-gray-400">
-              This series began with self-portraits shot on medium format film. I would scratch and burn my own image from the negatives—physically removing myself from the frame. What started as destruction became something larger: a visual language for the hollow shell of a person trapped in the cycle of mental illness and substance abuse.
+              This series began with self-portraits shot on medium format film. I would scratch and burn my own image from the negatives, physically removing myself from the frame. What started as destruction became a visual language for the hollow shell of a person trapped in the cycle of mental illness and substance abuse.
             </p>
             <p className="text-gray-400">
               The work evolved into prints, an artist book functioning as a diary I allow others to read, and video pieces that hint at the devastating effects of addiction.
             </p>
             <p className="text-gray-400">
-              If viewing this work inspires even one person to advocate for mental health care—or makes someone battling similar demons feel less alone—then every painful moment of its creation was worth it.
+              If viewing this work inspires even one person to advocate for mental health care or makes someone battling similar demons feel less alone, then every painful moment of its creation was worth it.
             </p>
           </div>
         </motion.div>
