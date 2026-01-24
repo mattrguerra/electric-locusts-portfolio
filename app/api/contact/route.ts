@@ -139,51 +139,6 @@ export async function POST(request: Request) {
       console.error('CC email error:', err);
     }
 
-    // Send SMS notification via Twilio (if configured)
-    const twilioSid = process.env.TWILIO_ACCOUNT_SID;
-    const twilioAuth = process.env.TWILIO_AUTH_TOKEN;
-    const twilioFrom = process.env.TWILIO_PHONE_NUMBER;
-    const twilioTo = process.env.SMS_NOTIFICATION_NUMBER; // Your phone: 832-330-2403
-
-    if (twilioSid && twilioAuth && twilioFrom && twilioTo) {
-      try {
-        const smsMessage = `Electric Locusts: New ${subject || 'inquiry'} from ${name} (${email}). Check email for details.`;
-
-        const twilioResponse = await fetch(
-          `https://api.twilio.com/2010-04-01/Accounts/${twilioSid}/Messages.json`,
-          {
-            method: 'POST',
-            headers: {
-              'Authorization': 'Basic ' + Buffer.from(`${twilioSid}:${twilioAuth}`).toString('base64'),
-              'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: new URLSearchParams({
-              From: twilioFrom,
-              To: twilioTo,
-              Body: smsMessage,
-            }),
-          }
-        );
-
-        if (!twilioResponse.ok) {
-          const twilioError = await twilioResponse.text();
-          console.error('Twilio SMS failed:', twilioError);
-        }
-      } catch (err) {
-        console.error('SMS notification error:', err);
-      }
-    }
-
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      const phoneNumber = '18323302403'; // Replace with your number (with country code)
-      const encodedMessage = encodeURIComponent(`Name: ${name}\nMessage: ${message}`);
-      const url = `https://wa.me{phoneNumber}?text=${encodedMessage}`;
-
-      // Open in a new tab for better user experience
-      window.open(url, '_blank');
-    };
-
     return NextResponse.json({
       success: true,
       message: 'Message sent successfully',
