@@ -32,7 +32,7 @@ export default function Navigation() {
     return (
       <header className="fixed top-0 left-0 right-0 z-50 h-20 flex items-center">
         <div className="max-w-6xl mx-auto px-6 lg:px-8 w-full">
-          <span className="font-display text-lg text-white/80">Electric Locusts</span>
+          <span className="font-display text-2xl text-white/80">Electric Locusts</span>
         </div>
       </header>
     );
@@ -49,7 +49,7 @@ export default function Navigation() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href="/" className="group">
-              <span className="font-display text-lg text-white/80 hover:text-white transition-colors duration-300">
+              <span className="font-display text-2xl text-white/80 hover:text-white transition-colors duration-300">
                 Electric Locusts
               </span>
             </Link>
