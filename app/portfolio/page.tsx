@@ -21,15 +21,15 @@ const series = [
     title: 'Self Annihilation',
     year: '2022',
     medium: 'Mixed Media',
-    description: 'Identity, mental illness, and the destruction of self through scratched and burned medium format negatives.',
+    description: 'Identity destroyed through scratched and burned negatives.',
     image: '/portfolio/self_annihilation/1.jpg',
   },
   {
     slug: 'what-we-were-left-with',
     title: 'What We Were Left With',
     year: '2023',
-    medium: 'Documentary Photography',
-    description: 'Archival photographs from years of active addiction—evidence of survival transformed into art.',
+    medium: 'Documentary',
+    description: 'Archival photographs from years of active addiction.',
     image: '/portfolio/what_we_were_left_with/1.jpg',
   },
   {
@@ -37,7 +37,7 @@ const series = [
     title: 'Exposure',
     year: '2023',
     medium: 'Photography',
-    description: 'Visualizing depression—the slow unraveling, the weight, the feeling of being stripped bare.',
+    description: 'Visualizing the slow unraveling of depression.',
     image: '/portfolio/exposure/_MG_8279.jpg',
   },
   {
@@ -45,15 +45,15 @@ const series = [
     title: 'People Who Saved My Life',
     year: '2024',
     medium: 'Cyanotype',
-    description: 'Five portraits of the people whose presence kept me alive, each with a handwritten letter of gratitude.',
+    description: 'Five portraits with handwritten letters of gratitude.',
     image: '/portfolio/people_saved/Cyanotype0001.jpg',
   },
   {
     slug: 'deconstructing-masculinity',
     title: 'Deconstructing Masculinity',
     year: '2024',
-    medium: 'Portrait Photography',
-    description: 'Challenging the narrow boundaries of what society allows men to be.',
+    medium: 'Portrait',
+    description: 'Challenging the narrow boundaries of manhood.',
     image: '/portfolio/masculinity/1.jpg',
   },
   {
@@ -61,92 +61,60 @@ const series = [
     title: 'Mixed',
     year: '2021',
     medium: 'Mixed Media',
-    description: 'The only work I could create during bipolar mixed episodes—visual chaos mirroring internal chaos.',
+    description: 'Visual chaos mirroring bipolar mixed episodes.',
     image: '/portfolio/mixed/1.jpg',
   },
 ];
 
 export default function PortfolioPage() {
   return (
-    <div className="min-h-screen pt-32 pb-24 bg-void">
-      {/* Background texture */}
-      <div className="organic-texture" />
-
-      {/* Floating cellular shapes */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] rounded-full blur-[150px] bg-cellular-purple/8 animate-cellular-breathe" />
-        <div
-          className="absolute bottom-1/4 -right-32 w-[400px] h-[400px] rounded-full blur-[120px] bg-cellular-blue/6 animate-cellular-breathe"
-          style={{ animationDelay: '-12s' }}
-        />
+    <div className="min-h-screen pt-20 pb-16 bg-black">
+      {/* Subtle atmospheric haze */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none opacity-30">
+        <div className="haze-layer absolute top-0 left-0 w-[600px] h-[600px] rounded-full blur-[200px] bg-gray-800" />
+        <div className="haze-layer-delayed absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full blur-[180px] bg-gray-900" />
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Page header */}
-        <div className="mb-20 text-center">
-          <span className="text-intimate text-sm tracking-widest uppercase block mb-4">
-            body of work
-          </span>
-          <h1 className="text-5xl md:text-6xl font-display font-light text-white/90 tracking-tight mb-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Minimal header */}
+        <header className="mb-12">
+          <h1 className="font-display text-4xl md:text-5xl text-white tracking-tight">
             Series
           </h1>
-          <p className="text-white/40 max-w-2xl mx-auto text-lg font-light leading-relaxed">
-            Each series represents a distinct chapter of exploration—identity, mental illness,
-            addiction, gratitude, and the boundaries we construct around gender.
-          </p>
-        </div>
+        </header>
 
-        {/* Series Grid */}
-        <div className="space-y-8">
-          {series.map((s, index) => (
+        {/* Tighter grid - images prominent */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {series.map((s) => (
             <Link
               key={s.slug}
               href={`/portfolio/${s.slug}`}
-              className="group block"
+              className="group block relative overflow-hidden"
             >
-              <article className="glass-card overflow-hidden">
-                <div className={`flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
-                  {/* Image */}
-                  <div className="md:w-1/2 relative overflow-hidden">
-                    <div className="aspect-[4/3] md:aspect-auto md:h-full relative">
-                      <img
-                        src={s.image}
-                        alt={s.title}
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-organic group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-void/60 via-transparent to-transparent" />
-                    </div>
-                  </div>
+              {/* Image container */}
+              <div className="aspect-[4/5] relative">
+                <img
+                  src={s.image}
+                  alt={s.title}
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                {/* Gradient overlay for text legibility */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80" />
 
-                  {/* Content */}
-                  <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
-                    <div className="flex items-center gap-4 mb-4">
-                      <span className="text-cellular-purple text-xs font-medium tracking-widest uppercase">
-                        {s.medium}
-                      </span>
-                      <span className="text-white/20">·</span>
-                      <span className="text-white/30 text-xs tracking-wide">
-                        {s.year}
-                      </span>
-                    </div>
-
-                    <h2 className="text-3xl md:text-4xl font-display font-light text-white mb-4 group-hover:text-white/80 transition-colors duration-300">
-                      {s.title}
-                    </h2>
-
-                    <p className="text-white/40 font-light leading-relaxed mb-6">
-                      {s.description}
-                    </p>
-
-                    <div className="flex items-center gap-2 text-white/30 group-hover:text-cellular-purple transition-colors duration-300">
-                      <span className="text-sm tracking-wide">View Series</span>
-                      <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </div>
-                  </div>
+                {/* Content overlay */}
+                <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                  <span className="text-gray-500 text-xs tracking-widest uppercase mb-2">
+                    {s.medium} · {s.year}
+                  </span>
+                  <h2 className="font-display text-2xl text-white mb-2 group-hover:text-gray-300 transition-colors">
+                    {s.title}
+                  </h2>
+                  <p className="text-gray-400 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {s.description}
+                  </p>
                 </div>
-              </article>
+              </div>
             </Link>
           ))}
         </div>

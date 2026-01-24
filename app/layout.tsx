@@ -1,33 +1,34 @@
 import type { Metadata } from 'next';
-import { Inter, Outfit } from 'next/font/google';
+import { IBM_Plex_Sans, Instrument_Serif } from 'next/font/google';
 import './globals.css';
 import Navigation from '@/components/navigation';
 import Footer from '@/components/footer';
-import { AnimatedBackground } from '@/components/animated-background';
 
 export const dynamic = 'force-dynamic';
 
-const inter = Inter({ 
+const ibmPlex = IBM_Plex_Sans({
   subsets: ['latin'],
-  variable: '--font-inter',
+  weight: ['300', '400', '500'],
+  variable: '--font-body',
 });
 
-const outfit = Outfit({ 
+const instrumentSerif = Instrument_Serif({
   subsets: ['latin'],
-  variable: '--font-outfit',
+  weight: ['400'],
+  variable: '--font-display',
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXTAUTH_URL || 'http://localhost:3000'),
   title: {
-    default: 'Matthew Guerra — Electric Locusts | Visual Artist',
-    template: '%s',
+    default: 'Electric Locusts',
+    template: '%s | Electric Locusts',
   },
   description:
-    'Matthew Guerra is an Austin-based visual artist exploring identity, mental health, and vulnerability through photography, mixed media, cyanotypes, and video art. Mental health advocacy through art.',
+    'Visual artist exploring identity, mental health, and vulnerability through photography, mixed media, and alternative processes.',
   keywords: [
-    'Matthew Guerra',
     'Electric Locusts',
+    'Matthew Guerra',
     'visual artist Austin',
     'mental health art',
     'cyanotype photography',
@@ -45,14 +46,14 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: '/',
     siteName: 'Electric Locusts',
-    title: 'Matthew Guerra — Electric Locusts',
+    title: 'Electric Locusts',
     description:
       'Visual artist exploring identity, mental illness, and the human experience through photography, mixed media, and alternative processes.',
     images: ['/og-image.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Matthew Guerra — Electric Locusts',
+    title: 'Electric Locusts',
     description:
       'Visual artist exploring identity, mental health, and vulnerability through photography and mixed media.',
     images: ['/og-image.png'],
@@ -70,16 +71,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
-      <head>
-        <script src="https://apps.abacus.ai/chatllm/appllm-lib.js" />
-      </head>
-      <body className="antialiased min-h-screen flex flex-col bg-[#050508] text-white">
-        <AnimatedBackground />
+    <html lang="en" className={`${ibmPlex.variable} ${instrumentSerif.variable}`}>
+      <body className="antialiased min-h-screen flex flex-col bg-[#0a0a0a] text-white">
         <Navigation />
-        <main className="flex-grow pt-20 relative z-10">
-          {children}
-        </main>
+        <main className="flex-grow relative z-10">{children}</main>
         <Footer />
       </body>
     </html>

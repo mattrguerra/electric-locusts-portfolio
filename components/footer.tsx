@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { Instagram, Facebook, Mail } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 // Threads icon component
 const ThreadsIcon = ({ className }: { className?: string }) => (
@@ -13,14 +12,14 @@ const ThreadsIcon = ({ className }: { className?: string }) => (
 
 const socialLinks = [
   {
-    icon: Facebook,
-    href: 'https://facebook.com/electriclocusts',
-    label: 'Facebook',
-  },
-  {
     icon: Instagram,
     href: 'https://instagram.com/electriclocusts',
     label: 'Instagram',
+  },
+  {
+    icon: Facebook,
+    href: 'https://facebook.com/electriclocusts',
+    label: 'Facebook',
   },
   {
     icon: ThreadsIcon,
@@ -29,83 +28,73 @@ const socialLinks = [
   },
 ];
 
-const navLinks = [
-  { href: '/portfolio', label: 'Portfolio' },
-  { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
-];
-
 export default function Footer() {
   return (
-    <footer className="relative mt-auto bg-void">
-      {/* Subtle gradient divider */}
-      <div
-        className="h-px"
-        style={{
-          background:
-            'linear-gradient(90deg, transparent 0%, rgba(107, 74, 139, 0.3) 50%, transparent 100%)',
-        }}
-      />
-
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="flex flex-col items-center text-center space-y-8">
-          {/* Artist name */}
-          <Link
-            href="/"
-            className="text-xl font-display font-light tracking-wide text-white/70 hover:text-white/90 transition-colors duration-300"
-          >
-            Matthew Guerra
-          </Link>
+    <footer className="relative bg-[#0a0a0a] border-t border-gray-800/50">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+          {/* Brand */}
+          <div className="space-y-4">
+            <Link href="/" className="font-display text-xl text-white/90 hover:text-white transition-colors">
+              Electric Locusts
+            </Link>
+            <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
+              Visual art exploring mental illness, identity, and the evidence we leave behind.
+            </p>
+          </div>
 
           {/* Navigation */}
-          <nav className="flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm text-white/30 hover:text-white/60 transition-colors duration-300"
-              >
-                {link.label}
+          <div className="space-y-4">
+            <span className="text-label text-gray-600 block">Navigate</span>
+            <nav className="flex flex-col gap-3">
+              <Link href="/portfolio" className="text-gray-400 hover:text-white transition-colors text-sm">
+                Work
               </Link>
-            ))}
-          </nav>
-
-          {/* Social links */}
-          <div className="flex items-center gap-4">
-            {socialLinks.map((social) => (
-              <motion.a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                className="p-3 rounded-full text-white/30 hover:text-white/60 hover:bg-white/5 transition-all duration-300"
-                aria-label={social.label}
-              >
-                <social.icon className="w-5 h-5" />
-              </motion.a>
-            ))}
+              <Link href="/about" className="text-gray-400 hover:text-white transition-colors text-sm">
+                About
+              </Link>
+              <Link href="/contact" className="text-gray-400 hover:text-white transition-colors text-sm">
+                Contact
+              </Link>
+            </nav>
           </div>
 
-          {/* Email */}
-          <a
-            href="mailto:mattguerra@electriclocusts.com"
-            className="flex items-center gap-2 text-white/30 hover:text-white/60 transition-colors duration-300 text-sm"
-          >
-            <Mail className="w-4 h-4" />
-            mattguerra@electriclocusts.com
-          </a>
-
-          {/* Decorative line */}
-          <div className="w-16 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-
-          {/* Copyright */}
-          <div className="space-y-2">
-            <p className="text-white/20 text-xs tracking-wide">
-              © {new Date().getFullYear()} Matthew Guerra. All rights reserved.
-            </p>
-            <p className="text-white/15 text-xs">Austin, TX</p>
+          {/* Contact */}
+          <div className="space-y-4">
+            <span className="text-label text-gray-600 block">Connect</span>
+            <a
+              href="mailto:mattguerra@electriclocusts.com"
+              className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm group"
+            >
+              <Mail className="w-4 h-4" />
+              <span>mattguerra@electriclocusts.com</span>
+            </a>
+            <div className="flex items-center gap-4 pt-2">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-white transition-colors duration-300"
+                  aria-label={social.label}
+                >
+                  <social.icon className="w-5 h-5" />
+                </a>
+              ))}
+            </div>
+            <p className="text-gray-600 text-xs pt-2">Austin, Texas</p>
           </div>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="mt-16 pt-8 border-t border-gray-800/50 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-gray-600 text-xs">
+            © {new Date().getFullYear()} Matthew Guerra. All rights reserved.
+          </p>
+          <p className="text-gray-700 text-xs">
+            Photography · Mixed Media · Alternative Process
+          </p>
         </div>
       </div>
     </footer>
