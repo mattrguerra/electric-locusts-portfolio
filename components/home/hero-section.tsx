@@ -130,7 +130,7 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-lg text-gray-200 max-w-md leading-relaxed"
             >
-              What remains when identity fractures. Visual artifacts from the space
+              What remains when identity fractures? Visual artifacts from the space
               between survival and dissolution.
             </motion.p>
 

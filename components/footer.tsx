@@ -90,7 +90,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-10 pt-6 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-3">
           <p className="text-gray-500 text-xs">
-            © {new Date().getFullYear()} Matthew Guerra. All rights reserved.
+            © {new Date().getFullYear()} Matt Guerra. All rights reserved.
           </p>
           <p className="text-gray-500 text-xs">
             Photography · Mixed Media · Alternative Process

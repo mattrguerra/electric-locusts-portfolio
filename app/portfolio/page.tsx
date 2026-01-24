@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Work | Matthew Guerra — Electric Locusts',
+  title: 'Work | Matt Guerra — Electric Locusts',
   description:
-    "Explore Matthew Guerra's body of work: Self Annihilation, What We Were Left With, Exposure, People Who Saved My Life, Deconstructing Masculinity, and Mixed. Photography, mixed media, and cyanotype art exploring identity and mental health.",
+    "Explore Matt Guerra's body of work: Self Annihilation, What We Were Left With, Exposure, People Who Saved My Life, Deconstructing Masculinity, and Mixed. Photography, mixed media, and cyanotype art exploring identity and mental health.",
   keywords: [
-    'Matthew Guerra portfolio',
+    'Matt Guerra portfolio',
     'Self Annihilation art series',
     'cyanotype portraits',
     'mental health photography',

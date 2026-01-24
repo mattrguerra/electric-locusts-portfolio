@@ -85,16 +85,16 @@ export default function WhatWeWereLeftWithPage() {
           </h2>
           <div className="space-y-4 text-gray-300 leading-relaxed">
             <p>
-              My art practice has become a tool for processing what I've survived. This series draws from my personal archive—photographs taken during years of active addiction and the aftermath of trauma.
+              My art practice has become a tool for processing what I've survived. This series draws from my personal archive of over 13,000 photographs taken during years of active addiction and the aftermath of trauma.
             </p>
             <p className="text-gray-400">
-              By revisiting and curating these images, I've created a visual diary of one of the most difficult chapters of my life: documenting the reality of substance abuse and its consequences in unflinching detail.
+              By revisiting and curating these images, I've created a visual diary of one of the most difficult chapters of my life; documenting the reality of substance abuse and its consequences in unflinching detail.
             </p>
             <p className="text-gray-400">
               Sharing these photographs validates my own experience. Trauma can make you question your memories, minimize your suffering. Seeing the evidence confirms that I went through something significant and survived it.
             </p>
             <p className="text-gray-400">
-              The fact that I can look back at these images—that I'm still here to curate them, to transform them into art—is evidence that recovery is possible. The human spirit can survive devastating circumstances.
+              The fact that I can look back at these images, and that I'm still here to curate and transform them into art is evidence that recovery is possible. The human spirit can survive devastating circumstances.
             </p>
           </div>
         </motion.div>

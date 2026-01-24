@@ -57,16 +57,16 @@ export default function PeopleWhoSavedMyLifePage() {
           </h2>
           <div className="space-y-4 text-gray-300 leading-relaxed">
             <p>
-              Creating work about mental health means constantly confronting darkness. Recently, I recognized that this constant engagement with negativity was affecting my own wellbeing.
+              Creating work about mental health means constantly confronting darkness. Shortly after creating Exposure, in 2021, I recognized that this constant engagement with negativity was affecting my own wellbeing.
             </p>
             <p className="text-gray-400">
-              This series is a deliberate shift toward gratitude. These five cyanotype portraits present the people whose presence kept me alive. Their support, patience, and love formed the foundation that allowed me to keep going.
+              In response to that realization, I created this series as a deliberate shift toward gratitude. These five cyanotype portraits present the people whose presence kept me alive. Their support, patience, and love formed the foundation that allowed me to keep going.
             </p>
             <p className="text-gray-400">
               On the reverse of each cyanotype is a handwritten letter to that person, thanking them for what they've meant to my survival. The work exists as both public tribute and private correspondence.
             </p>
             <p className="text-gray-400">
-              Without these five people, I truly don't believe I would have made it. This series is a testament to the vital importance of support networks—evidence that connection can be the difference between life and death.
+              Without these five people, I truly don't believe I would have made it. This series is a testament to the vital importance of support networks and is evidence that connection can be the difference between life and death.
             </p>
           </div>
         </motion.div>

@@ -47,7 +47,7 @@ export default function ContactCTA() {
 
           <p className="text-white/40 text-lg max-w-xl mx-auto font-light leading-relaxed">
             Whether it&apos;s a gallery inquiry, commission, or simply a
-            conversation about art and the human experience — I&apos;d love to
+            conversation about art and the human experience, I&apos;d love to
             hear from you.
           </p>
 
