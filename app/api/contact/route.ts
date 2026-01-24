@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 
@@ -173,6 +175,16 @@ export async function POST(request: Request) {
         console.error('SMS notification error:', err);
       }
     }
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      const phoneNumber = '18323302403'; // Replace with your number (with country code)
+      const encodedMessage = encodeURIComponent(`Name: ${name}\nMessage: ${message}`);
+      const url = `https://wa.me{phoneNumber}?text=${encodedMessage}`;
+
+      // Open in a new tab for better user experience
+      window.open(url, '_blank');
+    };
 
     return NextResponse.json({
       success: true,
