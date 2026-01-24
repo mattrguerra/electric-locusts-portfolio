@@ -5,43 +5,49 @@ import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import Link from 'next/link';
 import { ArrowDown } from 'lucide-react';
 
-// Series data for interactive preview
+// Series data for interactive preview - ordered by year (descending: 2023 -> 2019)
 const series = [
-  {
-    slug: 'self-annihilation',
-    title: 'Self Annihilation',
-    image: '/portfolio/self_annihilation/1.jpg',
-    tagline: 'Identity destroyed',
-  },
   {
     slug: 'what-we-were-left-with',
     title: 'What We Were Left With',
-    image: '/portfolio/what_we_were_left_with/1.jpg',
+    year: 2023,
+    image: 'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258107/33_wng4mt.jpg',
     tagline: 'Evidence of survival',
   },
   {
-    slug: 'exposure',
-    title: 'Exposure',
-    image: '/portfolio/exposure/_MG_8279.jpg',
-    tagline: 'Depression visualized',
+    slug: 'self-annihilation',
+    title: 'Self Annihilation',
+    year: 2022,
+    image: 'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258735/1_plkakn.jpg',
+    tagline: 'Identity destroyed',
   },
   {
     slug: 'people-who-saved-my-life',
     title: 'People Who Saved My Life',
-    image: '/portfolio/people_saved/Cyanotype0001.jpg',
+    year: 2021,
+    image: 'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257844/Cyanotype0001_thqymg.jpg',
     tagline: 'Gratitude made visible',
   },
   {
-    slug: 'deconstructing-masculinity',
-    title: 'Deconstructing Masculinity',
-    image: '/portfolio/masculinity/1.jpg',
-    tagline: 'Beyond the archetype',
+    slug: 'exposure',
+    title: 'Exposure',
+    year: 2021,
+    image: 'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257879/_MG_8279_eb8tmi.jpg',
+    tagline: 'Depression visualized',
   },
   {
     slug: 'mixed',
     title: 'Mixed',
-    image: '/portfolio/mixed/1.jpg',
+    year: 2020,
+    image: 'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257782/1_qoh1en.jpg',
     tagline: 'Chaos contained',
+  },
+  {
+    slug: 'deconstructing-masculinity',
+    title: 'Deconstructing Masculinity',
+    year: 2019,
+    image: 'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257508/21_hdndtl.jpg',
+    tagline: 'Beyond the archetype',
   },
 ];
 

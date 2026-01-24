@@ -5,11 +5,18 @@ import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import VideoPlayer from '@/components/video-player';
 
-const images = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg'];
+// Cloudinary image URLs for Mixed
+const images = [
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257782/1_qoh1en.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257785/2_xjtmvv.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257783/3_duaven.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257784/4_t9h288.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257782/5_waukck.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257780/6_m4lutj.jpg',
+];
 
-// TODO: Replace with your Cloudinary video URL
-// This video should play ONCE and stop
-const VIDEO_URL = process.env.NEXT_PUBLIC_MIXED_VIDEO || '';
+// Mixed video - plays once and stops
+const VIDEO_URL = 'https://res.cloudinary.com/dkrj3oqsy/video/upload/v1769257818/Mixed_avngps.mp4';
 
 export default function MixedPage() {
   return (
@@ -33,7 +40,7 @@ export default function MixedPage() {
           className="mb-12"
         >
           <p className="text-gray-500 text-xs tracking-[0.2em] uppercase mb-4">
-            Mixed Media · 2021
+            Mixed Media · 2020
           </p>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-white mb-6">
             Mixed
@@ -105,7 +112,7 @@ export default function MixedPage() {
               >
                 <div className="aspect-square relative">
                   <img
-                    src={`/portfolio/mixed/${img}`}
+                    src={img}
                     alt={`Mixed ${index + 1}`}
                     loading={index < 4 ? 'eager' : 'lazy'}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"

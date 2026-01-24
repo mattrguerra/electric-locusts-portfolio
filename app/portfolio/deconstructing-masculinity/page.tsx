@@ -4,13 +4,35 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 
+// Cloudinary image URLs for Deconstructing Masculinity
 const images = [
-  '1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg',
-  '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg',
-  '11.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg',
-  '17.jpg', '18.jpg', '19.jpg', '20.jpg', '21.jpg',
-  '22.jpg', '23.jpg', '24.jpg', '25.jpg', '26.jpg',
-  '27.jpg', '28.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257516/1_hqb7bn.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257515/2_rcco0d.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257515/3_nu3izm.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257515/4_uzkmwe.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257515/5_xhicfd.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257512/6_sh8xh5.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257512/7_pxnx1p.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257506/8_ebuulv.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257512/9_hl6pwe.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257512/10_ko0f3f.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257512/11_fsniw5.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257510/13_m2avzn.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257506/14_xvdrky.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257506/15_fhhc8x.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257509/16_wvi67t.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257509/17_gafjzw.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257509/18_i0gtjm.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257509/19_zcsbhn.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257512/20_wvuptn.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257508/21_hdndtl.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257508/22_hax6il.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257507/23_bztz50.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257507/24_mupb90.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257512/25_ocddgp.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257508/26_dx6lho.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257507/27_r2nbdy.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257506/28_kdzdgu.jpg',
 ];
 
 export default function DeconstructingMasculinityPage() {
@@ -35,7 +57,7 @@ export default function DeconstructingMasculinityPage() {
           className="mb-12"
         >
           <p className="text-gray-500 text-xs tracking-[0.2em] uppercase mb-4">
-            Portrait · 2024
+            Portrait · 2019
           </p>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-white mb-6">
             Deconstructing Masculinity
@@ -95,7 +117,7 @@ export default function DeconstructingMasculinityPage() {
               >
                 <div className="aspect-[3/4] relative">
                   <img
-                    src={`/portfolio/masculinity/${img}`}
+                    src={img}
                     alt={`Deconstructing Masculinity ${index + 1}`}
                     loading={index < 6 ? 'eager' : 'lazy'}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"

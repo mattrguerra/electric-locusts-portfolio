@@ -4,12 +4,13 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 
+// Cloudinary image URLs for People Who Saved My Life
 const images = [
-  'Cyanotype0001.jpg',
-  'Cyanotype0003.jpg',
-  'Cyanotype0005.jpg',
-  'Cyanotype0007.jpg',
-  'Cyanotype0009.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257844/Cyanotype0001_thqymg.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257844/Cyanotype0003_gvynbc.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257843/Cyanotype0005_aixwpi.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257842/Cyanotype0007_o0sq0f.jpg',
+  'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257842/Cyanotype0009_fysxdl.jpg',
 ];
 
 export default function PeopleWhoSavedMyLifePage() {
@@ -34,7 +35,7 @@ export default function PeopleWhoSavedMyLifePage() {
           className="mb-12"
         >
           <p className="text-gray-500 text-xs tracking-[0.2em] uppercase mb-4">
-            Cyanotype · 2024
+            Cyanotype · 2021
           </p>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-white mb-6">
             People Who Saved My Life
@@ -94,7 +95,7 @@ export default function PeopleWhoSavedMyLifePage() {
               >
                 <div className="aspect-[3/4] relative">
                   <img
-                    src={`/portfolio/people_saved/${img}`}
+                    src={img}
                     alt={`People Who Saved My Life ${index + 1}`}
                     loading={index < 2 ? 'eager' : 'lazy'}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.01]"
