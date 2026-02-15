@@ -58,7 +58,7 @@ export default function ServicesPreview() {
   return (
     <section className="py-24 relative">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary-900/10 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-aurora-purple/10 to-transparent" />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader

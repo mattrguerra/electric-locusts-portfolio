@@ -60,7 +60,12 @@ export default function AboutClient() {
   return (
     <div className="min-h-screen bg-black">
       {/* Hero section with self-portrait placeholder */}
-      <section className="relative min-h-[80vh] flex items-center pt-20">
+      <section className="relative min-h-[80vh] flex items-center pt-20 overflow-hidden">
+        {/* Aurora background orbs */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/3 -right-64 w-[500px] h-[500px] rounded-full blur-[120px] bg-aurora-purple/[0.08] animate-pulse-glow" />
+          <div className="absolute bottom-1/3 -left-64 w-[400px] h-[400px] rounded-full blur-[100px] bg-aurora-pink/[0.06] animate-pulse-glow" style={{ animationDelay: '2s' }} />
+        </div>
         <div className="max-w-6xl mx-auto px-6 lg:px-8 w-full relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left - Text */}
@@ -72,7 +77,7 @@ export default function AboutClient() {
             >
               <span className="text-xs tracking-[0.2em] uppercase text-gray-400 block">The Artist Behind</span>
               <h1 className="font-display text-display text-white leading-none">
-                Who Is<br />Electric<br />Locusts?
+                Who Is<br />Electric<br /><span className="gradient-text-aurora">Locusts?</span>
               </h1>
               <p className="text-gray-300 text-lg max-w-md leading-relaxed">
                 Matt Guerra. Houston-based visual artist exploring mental illness, identity,
@@ -87,7 +92,7 @@ export default function AboutClient() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <div className="aspect-[3/4] bg-gray-900 rounded overflow-hidden">
+              <div className="aspect-[3/4] bg-gray-900 rounded-xl overflow-hidden glow-aurora">
                 <img
                   src="https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769261111/matt2_h3rqdm.jpg"
                   alt="Matt Guerra"
@@ -152,7 +157,7 @@ export default function AboutClient() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="my-12 py-6 border-l-2 border-gray-600 pl-6"
+            className="my-12 py-6 border-l-2 border-aurora-purple/40 pl-6"
           >
             <p className="text-xl text-white font-display italic leading-relaxed">
               &ldquo;If even one person views my work and decides to fight for mental health
@@ -163,7 +168,7 @@ export default function AboutClient() {
       </section>
 
       {/* Mediums section - reduced padding */}
-      <section className="py-16 border-t border-gray-800 relative z-10">
+      <section className="py-16 border-t border-white/[0.06] relative z-10">
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0 }}
@@ -204,7 +209,7 @@ export default function AboutClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gray-900 border border-gray-800 rounded p-5"
+                className="glass-card p-5"
               >
                 <h4 className="text-white font-display text-lg mb-2">{medium.title}</h4>
                 <p className="text-gray-400 text-sm leading-relaxed">{medium.description}</p>
@@ -215,7 +220,7 @@ export default function AboutClient() {
       </section>
 
       {/* Timeline section - fixed contrast, no color banding */}
-      <section className="py-16 border-t border-gray-800 relative z-10">
+      <section className="py-16 border-t border-white/[0.06] relative z-10">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0 }}
@@ -251,7 +256,7 @@ export default function AboutClient() {
       </section>
 
       {/* Connect section - reduced negative space */}
-      <section className="py-16 border-t border-gray-800 relative z-10">
+      <section className="py-16 border-t border-white/[0.06] relative z-10">
         <div className="max-w-xl mx-auto px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -267,7 +272,7 @@ export default function AboutClient() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-11 h-11 rounded bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-gray-400 hover:text-white transition-all"
+                  className="w-11 h-11 rounded-lg bg-white/[0.04] border border-white/[0.08] hover:bg-white/[0.08] hover:border-white/[0.15] flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300"
                   aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5" />

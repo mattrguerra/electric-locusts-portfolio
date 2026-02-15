@@ -7,23 +7,23 @@ import { ArrowRight } from 'lucide-react';
 export default function ContactCTA() {
   return (
     <section className="py-32 relative overflow-hidden">
-      {/* Organic background shapes */}
+      {/* Aurora background orbs */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           animate={{
             scale: [1, 1.1, 1],
-            opacity: [0.1, 0.15, 0.1],
+            opacity: [0.06, 0.1, 0.06],
           }}
           transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full bg-cellular-purple/20 blur-[200px]"
+          className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full bg-aurora-purple/20 blur-[200px]"
         />
         <motion.div
           animate={{
             scale: [1.1, 1, 1.1],
-            opacity: [0.08, 0.12, 0.08],
+            opacity: [0.04, 0.08, 0.04],
           }}
           transition={{ duration: 25, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute -bottom-32 -left-32 w-[500px] h-[500px] rounded-full bg-cellular-blue/15 blur-[180px]"
+          className="absolute -bottom-32 -left-32 w-[500px] h-[500px] rounded-full bg-aurora-pink/15 blur-[180px]"
         />
       </div>
 
@@ -42,7 +42,7 @@ export default function ContactCTA() {
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-light text-white/90 tracking-tight leading-tight">
             Interested in a{' '}
-            <span className="gradient-text">collaboration</span>?
+            <span className="gradient-text-aurora">collaboration</span>?
           </h2>
 
           <p className="text-white/70 text-lg max-w-xl mx-auto font-light leading-relaxed">

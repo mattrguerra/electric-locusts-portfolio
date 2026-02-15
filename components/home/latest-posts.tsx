@@ -83,10 +83,10 @@ export default function LatestPosts() {
                         />
                       </div>
                     )}
-                    <span className="text-primary-400 text-sm font-medium">
+                    <span className="text-aurora-purple text-sm font-medium">
                       {post?.category ?? ''}
                     </span>
-                    <h3 className="text-xl font-bold text-white mt-1 mb-2 group-hover:text-primary-300 transition-colors line-clamp-2">
+                    <h3 className="text-xl font-bold text-white mt-1 mb-2 group-hover:text-aurora-pink transition-colors line-clamp-2">
                       {post?.title ?? ''}
                     </h3>
                     <p className="text-white/70 text-sm line-clamp-2 mb-4">

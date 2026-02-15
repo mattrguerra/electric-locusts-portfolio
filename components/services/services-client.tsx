@@ -171,14 +171,14 @@ export default function ServicesClient() {
               >
                 {service?.popular && (
                   <div className="absolute top-4 right-4">
-                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-primary-500 text-white">
+                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-aurora-purple text-white">
                       Popular
                     </span>
                   </div>
                 )}
                 
                 <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service?.color ?? 'from-gray-500 to-gray-600'} p-0.5 mb-4`}>
-                  <div className="w-full h-full rounded-[10px] bg-[#1a0a2e] flex items-center justify-center">
+                  <div className="w-full h-full rounded-[10px] bg-[#0d0d0d] flex items-center justify-center">
                     {service?.icon && <service.icon className="w-7 h-7 text-white" />}
                   </div>
                 </div>
@@ -187,14 +187,14 @@ export default function ServicesClient() {
                 <p className="text-white/60 text-sm mb-4 min-h-[48px]">{service?.description ?? ''}</p>
                 
                 <div className="flex items-center gap-2 mb-4">
-                  <DollarSign className="w-4 h-4 text-primary-400" />
-                  <span className="text-lg font-bold gradient-text">{service?.priceRange ?? ''}</span>
+                  <DollarSign className="w-4 h-4 text-aurora-purple" />
+                  <span className="text-lg font-bold gradient-text-aurora">{service?.priceRange ?? ''}</span>
                 </div>
 
                 <ul className="space-y-2">
                   {service?.features?.map?.((feature) => (
                     <li key={feature} className="flex items-center gap-2 text-sm text-white/70">
-                      <Check className="w-4 h-4 text-primary-400 flex-shrink-0" />
+                      <Check className="w-4 h-4 text-aurora-purple flex-shrink-0" />
                       {feature}
                     </li>
                   )) ?? null}
@@ -212,8 +212,8 @@ export default function ServicesClient() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary-500/20 mb-4">
-              <DollarSign className="w-6 h-6 text-primary-400" />
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-aurora-purple/20 mb-4">
+              <DollarSign className="w-6 h-6 text-aurora-purple" />
             </div>
             <h3 className="text-2xl font-bold text-white">Project Packages</h3>
             <p className="text-white/60 mt-2">Choose a package or request a custom quote</p>
@@ -229,18 +229,18 @@ export default function ServicesClient() {
                 transition={{ delay: (index ?? 0) * 0.1 }}
                 className={`relative rounded-2xl p-1 ${
                   pkg?.highlighted
-                    ? 'bg-gradient-to-br from-primary-500 via-accent-cyan to-accent-emerald'
+                    ? 'bg-gradient-to-br from-aurora-pink via-aurora-purple to-aurora-blue'
                     : 'bg-transparent'
                 }`}
               >
                 <div className={`h-full rounded-[14px] p-6 ${
                   pkg?.highlighted
-                    ? 'bg-[#1a0a2e]'
+                    ? 'bg-[#0d0d0d]'
                     : 'glass-card'
                 }`}>
                   {pkg?.highlighted && (
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                      <span className="px-4 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-primary-500 to-accent-cyan text-white">
+                      <span className="px-4 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-aurora-pink to-aurora-blue text-white">
                         Recommended
                       </span>
                     </div>
@@ -248,7 +248,7 @@ export default function ServicesClient() {
 
                   <h4 className="text-xl font-bold text-white mb-2">{pkg?.name ?? ''}</h4>
                   <div className="mb-4">
-                    <span className="text-4xl font-bold gradient-text">{pkg?.price ?? ''}</span>
+                    <span className="text-4xl font-bold gradient-text-aurora">{pkg?.price ?? ''}</span>
                     {pkg?.price !== 'Custom' && <span className="text-white/60 text-sm">/project</span>}
                   </div>
                   <p className="text-white/60 text-sm mb-6">{pkg?.description ?? ''}</p>
@@ -256,7 +256,7 @@ export default function ServicesClient() {
                   <ul className="space-y-3 mb-8">
                     {pkg?.features?.map?.((feature) => (
                       <li key={feature} className="flex items-center gap-2 text-sm text-white/70">
-                        <Check className="w-4 h-4 text-primary-400 flex-shrink-0" />
+                        <Check className="w-4 h-4 text-aurora-purple flex-shrink-0" />
                         {feature}
                       </li>
                     )) ?? null}
@@ -293,7 +293,7 @@ export default function ServicesClient() {
               { step: '04', title: 'Delivery', desc: 'Get final files and support' },
             ]?.map?.((item, index) => (
               <div key={item?.step} className="relative">
-                <span className="text-5xl font-bold text-primary-500/20">{item?.step ?? ''}</span>
+                <span className="text-5xl font-bold text-aurora-purple/20">{item?.step ?? ''}</span>
                 <h4 className="text-lg font-bold text-white mt-2">{item?.title ?? ''}</h4>
                 <p className="text-white/60 text-sm mt-1">{item?.desc ?? ''}</p>
                 {(index ?? 0) < 3 && (

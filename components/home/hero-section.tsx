@@ -105,6 +105,13 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/70" />
       </div>
 
+      {/* Floating aurora orbs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-aurora-pink/[0.06] rounded-full blur-[100px] animate-float-slow" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-aurora-blue/[0.06] rounded-full blur-[100px] animate-float-slow" style={{ animationDelay: '3s' }} />
+        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-aurora-purple/[0.05] rounded-full blur-[80px] animate-float-slow" style={{ animationDelay: '1.5s' }} />
+      </div>
+
       {/* Content */}
       <motion.div
         style={{ opacity, y }}
@@ -120,7 +127,7 @@ export default function HeroSection() {
             >
               <span className="text-xs tracking-[0.2em] uppercase text-gray-400 block mb-4">Visual Artist</span>
               <h1 className="font-display text-display text-white leading-none drop-shadow-lg">
-                Electric<br />Locusts
+                Electric<br /><span className="gradient-text-aurora">Locusts</span>
               </h1>
             </motion.div>
 
@@ -158,7 +165,7 @@ export default function HeroSection() {
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
           >
-            <div className="bg-black/50 backdrop-blur-sm rounded p-6 border border-white/10">
+            <div className="glass-card p-6">
               <span className="text-xs tracking-[0.2em] uppercase text-gray-400 block mb-4">Explore Series</span>
 
               <div className="space-y-1">

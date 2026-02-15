@@ -17,7 +17,7 @@ const GlassCard = forwardRef<HTMLDivElement, GlassCardProps>(
     const variants = {
       default: `
         relative overflow-hidden
-        bg-gradient-to-br from-white/[0.06] via-white/[0.02] to-violet-500/[0.03]
+        bg-gradient-to-br from-white/[0.06] via-white/[0.02] to-aurora-purple/[0.03]
         backdrop-blur-[40px] backdrop-saturate-[1.8]
         border border-white/[0.08]
         rounded-[28px]
@@ -33,7 +33,7 @@ const GlassCard = forwardRef<HTMLDivElement, GlassCardProps>(
       `,
       dark: `
         relative overflow-hidden
-        bg-gradient-to-br from-black/[0.4] via-black/[0.2] to-violet-900/[0.1]
+        bg-gradient-to-br from-black/[0.4] via-black/[0.2] to-aurora-purple/[0.1]
         backdrop-blur-[40px] backdrop-saturate-[1.4]
         border border-white/[0.06]
         rounded-[28px]
@@ -41,9 +41,9 @@ const GlassCard = forwardRef<HTMLDivElement, GlassCardProps>(
       `,
       accent: `
         relative overflow-hidden
-        bg-gradient-to-br from-violet-500/[0.15] via-violet-500/[0.05] to-cyan-500/[0.1]
+        bg-gradient-to-br from-aurora-purple/[0.15] via-aurora-purple/[0.05] to-aurora-blue/[0.1]
         backdrop-blur-[40px] backdrop-saturate-[1.8]
-        border border-violet-500/[0.2]
+        border border-aurora-purple/[0.2]
         rounded-[28px]
         shadow-[0_8px_40px_rgba(139,92,246,0.2),0_2px_8px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.15)]
       `,
@@ -55,7 +55,7 @@ const GlassCard = forwardRef<HTMLDivElement, GlassCardProps>(
         className={cn(
           variants[variant],
           hover && 'transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)]',
-          hover && 'hover:bg-gradient-to-br hover:from-white/[0.1] hover:via-white/[0.04] hover:to-violet-500/[0.06]',
+          hover && 'hover:bg-gradient-to-br hover:from-white/[0.1] hover:via-white/[0.04] hover:to-aurora-purple/[0.06]',
           hover && 'hover:border-white/[0.15]',
           hover && 'hover:shadow-[0_16px_64px_rgba(0,0,0,0.5),0_4px_16px_rgba(139,92,246,0.15),inset_0_1px_0_rgba(255,255,255,0.15)]',
           hover && 'hover:-translate-y-1.5 hover:scale-[1.01]',
