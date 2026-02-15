@@ -86,7 +86,7 @@ export default function BlogClient() {
                 onClick={() => setActiveCategory(cat ?? 'All')}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                   activeCategory === cat
-                    ? 'bg-primary-500 text-white'
+                    ? 'bg-aurora-purple text-white'
                     : 'glass-light text-white/70 hover:text-white hover:bg-white/15'
                 }`}
               >
@@ -128,14 +128,14 @@ export default function BlogClient() {
                           className="object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                         <div className="absolute top-3 left-3">
-                          <span className="px-3 py-1 rounded-full text-xs font-medium bg-primary-500/80 backdrop-blur-sm text-white">
+                          <span className="px-3 py-1 rounded-full text-xs font-medium bg-aurora-purple/80 backdrop-blur-sm text-white">
                             {post?.category ?? ''}
                           </span>
                         </div>
                       </div>
                     )}
                     
-                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary-300 transition-colors line-clamp-2">
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-aurora-pink transition-colors line-clamp-2">
                       {post?.title ?? ''}
                     </h3>
                     <p className="text-white/70 text-sm line-clamp-2 mb-4">

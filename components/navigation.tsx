@@ -42,7 +42,7 @@ export default function Navigation() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? 'bg-black/80 backdrop-blur-md border-b border-gray-800/50' : ''
+          scrolled ? 'bg-black/70 backdrop-blur-2xl border-b border-white/[0.06]' : ''
         }`}
       >
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
@@ -63,14 +63,14 @@ export default function Navigation() {
                   className={`relative text-sm tracking-wide transition-colors duration-300 ${
                     pathname === item?.href
                       ? 'text-white'
-                      : 'text-gray-500 hover:text-gray-300'
+                      : 'text-gray-500 hover:text-gray-200'
                   }`}
                 >
                   {item?.label}
                   {pathname === item?.href && (
                     <motion.div
                       layoutId="nav-underline"
-                      className="absolute -bottom-1 left-0 right-0 h-px bg-gray-600"
+                      className="absolute -bottom-1 left-0 right-0 h-px bg-gradient-to-r from-aurora-pink via-aurora-purple to-aurora-blue"
                       transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                     />
                   )}

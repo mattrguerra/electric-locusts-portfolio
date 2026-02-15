@@ -4,7 +4,7 @@ import ContactCTA from '@/components/home/contact-cta';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-void">
+    <div className="min-h-screen bg-black">
       <HeroSection />
       <FeaturedWork />
       <ContactCTA />

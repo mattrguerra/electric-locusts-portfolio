@@ -30,13 +30,16 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#0a0a0a] border-t border-gray-700">
+    <footer className="relative bg-[#0a0a0a] border-t border-white/[0.06]">
       <div className="max-w-6xl mx-auto px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
           {/* Brand */}
           <div className="space-y-3">
-            <Link href="/" className="font-display text-xl text-white hover:text-gray-300 transition-colors">
-              Electric Locusts
+            <Link href="/" className="group inline-block">
+              <span className="font-display text-xl text-white hover:text-gray-300 transition-colors">
+                Electric Locusts
+              </span>
+              <span className="block w-0 h-px bg-gradient-to-r from-aurora-pink to-aurora-blue group-hover:w-full transition-all duration-300" />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
               Visual art exploring mental illness, identity, and the evidence we leave behind.
@@ -88,7 +91,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-10 pt-6 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-3">
+        <div className="mt-10 pt-6 border-t border-white/[0.06] flex flex-col md:flex-row justify-between items-center gap-3">
           <p className="text-gray-500 text-xs">
             © {new Date().getFullYear()} Matt Guerra. All rights reserved.
           </p>

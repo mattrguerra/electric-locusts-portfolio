@@ -32,6 +32,13 @@ const config: Config = {
         // Accent (rarely used)
         blood: '#6b2020',
         wound: '#4a1818',
+        // Aurora accent palette
+        aurora: {
+          pink: '#ff6b9d',
+          purple: '#8e44ad',
+          blue: '#5ac8fa',
+          coral: '#c44569',
+        },
       },
       fontFamily: {
         display: ['var(--font-display)', 'Georgia', 'serif'],
@@ -45,6 +52,9 @@ const config: Config = {
         drift: 'drift 30s ease-in-out infinite',
         'fade-in': 'fade-in 0.6s ease-out forwards',
         'fade-up': 'fade-up 0.6s ease-out forwards',
+        'float-slow': 'float-slow 6s ease-in-out infinite',
+        'pulse-glow': 'pulse-glow 4s ease-in-out infinite',
+        'shimmer': 'shimmer 2s linear infinite',
       },
       keyframes: {
         drift: {
@@ -60,6 +70,18 @@ const config: Config = {
         'fade-up': {
           from: { opacity: '0', transform: 'translateY(20px)' },
           to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        'float-slow': {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        'pulse-glow': {
+          '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+          '50%': { opacity: '0.7', transform: 'scale(1.05)' },
+        },
+        'shimmer': {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
         },
       },
     },

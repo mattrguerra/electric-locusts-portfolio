@@ -76,7 +76,7 @@ export default function BlogPostClient({ post, relatedPosts }: Props) {
           animate={{ opacity: 1, y: 0 }}
           className="mb-8"
         >
-          <span className="px-3 py-1 rounded-full text-sm font-medium bg-primary-500/20 text-primary-400 mb-4 inline-block">
+          <span className="px-3 py-1 rounded-full text-sm font-medium bg-aurora-purple/20 text-aurora-purple mb-4 inline-block">
             {post?.category ?? ''}
           </span>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display text-white mb-6 leading-tight">
@@ -98,7 +98,7 @@ export default function BlogPostClient({ post, relatedPosts }: Props) {
             </span>
             <button
               onClick={handleShare}
-              className="flex items-center gap-2 hover:text-primary-400 transition-colors ml-auto"
+              className="flex items-center gap-2 hover:text-aurora-purple transition-colors ml-auto"
             >
               <Share2 className="w-4 h-4" />
               Share
@@ -136,10 +136,10 @@ export default function BlogPostClient({ post, relatedPosts }: Props) {
             className="prose prose-lg prose-invert max-w-none
               prose-headings:text-white prose-headings:font-display
               prose-p:text-white/80 prose-p:leading-relaxed
-              prose-a:text-primary-400 prose-a:no-underline hover:prose-a:underline
+              prose-a:text-aurora-purple prose-a:no-underline hover:prose-a:underline
               prose-strong:text-white
               prose-ul:text-white/80 prose-ol:text-white/80
-              prose-blockquote:border-primary-500 prose-blockquote:text-white/75 prose-blockquote:italic"
+              prose-blockquote:border-aurora-purple prose-blockquote:text-white/75 prose-blockquote:italic"
             dangerouslySetInnerHTML={{ __html: post?.content ?? '' }}
           />
         </motion.article>
@@ -188,7 +188,7 @@ export default function BlogPostClient({ post, relatedPosts }: Props) {
                         />
                       </div>
                     )}
-                    <h3 className="font-bold text-white group-hover:text-primary-300 transition-colors line-clamp-2 text-sm">
+                    <h3 className="font-bold text-white group-hover:text-aurora-pink transition-colors line-clamp-2 text-sm">
                       {relatedPost?.title ?? ''}
                     </h3>
                   </GlassCard>

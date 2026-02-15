@@ -69,25 +69,30 @@ const series = [
 
 export default function PortfolioPage() {
   return (
-    <div className="min-h-screen pt-20 pb-16 bg-black">
+    <div className="min-h-screen pt-20 pb-16 bg-black relative overflow-hidden">
+      {/* Aurora background orb */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full blur-[180px] bg-aurora-purple/[0.04] animate-pulse-glow" />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Minimal header */}
         <header className="mb-10">
           <h1 className="font-display text-4xl md:text-5xl text-white tracking-tight">
-            Series
+            <span className="gradient-text-aurora">Series</span>
           </h1>
         </header>
 
         {/* Grid with dark overlay that fades on hover to reveal image */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {series.map((s) => (
             <Link
               key={s.slug}
               href={`/portfolio/${s.slug}`}
-              className="group block relative overflow-hidden"
+              className="group block relative overflow-hidden rounded-xl glow-aurora-hover"
             >
               {/* Image container */}
-              <div className="aspect-[4/5] relative bg-gray-900">
+              <div className="aspect-[4/5] relative bg-gray-900 rounded-xl overflow-hidden">
                 <img
                   src={s.image}
                   alt={s.title}
@@ -97,6 +102,9 @@ export default function PortfolioPage() {
 
                 {/* Dark overlay - visible by default, fades on hover */}
                 <div className="absolute inset-0 bg-black/70 transition-opacity duration-500 group-hover:opacity-0" />
+
+                {/* Aurora glow on hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-aurora-purple/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 {/* Content - visible by default, fades on hover */}
                 <div className="absolute inset-0 p-6 flex flex-col justify-center items-center text-center transition-opacity duration-500 group-hover:opacity-0">
@@ -113,8 +121,8 @@ export default function PortfolioPage() {
 
                 {/* Hover hint at bottom */}
                 <div className="absolute bottom-4 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <span className="text-white/80 text-sm bg-black/50 px-3 py-1 rounded">
-                    View Series →
+                  <span className="text-white/80 text-sm bg-black/50 backdrop-blur-sm px-4 py-1.5 rounded-full">
+                    View Series
                   </span>
                 </div>
               </div>

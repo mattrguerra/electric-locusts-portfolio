@@ -42,12 +42,12 @@ const featuredProjects = [
 export default function FeaturedWork() {
   return (
     <section className="py-32 relative">
-      {/* Background cellular shapes */}
+      {/* Background aurora orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -left-32 w-[400px] h-[400px] rounded-full blur-[120px] bg-cellular-purple/10 animate-cellular-breathe" />
+        <div className="absolute top-1/4 -left-32 w-[400px] h-[400px] rounded-full blur-[120px] bg-aurora-purple/[0.08] animate-pulse-glow" />
         <div
-          className="absolute bottom-1/4 -right-32 w-[350px] h-[350px] rounded-full blur-[100px] bg-cellular-blue/8 animate-cellular-breathe"
-          style={{ animationDelay: '-10s' }}
+          className="absolute bottom-1/4 -right-32 w-[350px] h-[350px] rounded-full blur-[100px] bg-aurora-blue/[0.06] animate-pulse-glow"
+          style={{ animationDelay: '-2s' }}
         />
       </div>
 
@@ -63,7 +63,7 @@ export default function FeaturedWork() {
             selected works
           </span>
           <h2 className="text-4xl md:text-5xl font-display font-light text-white/90 tracking-tight">
-            Exploring the <span className="gradient-text">Fragmented Self</span>
+            Exploring the <span className="gradient-text-aurora">Fragmented Self</span>
           </h2>
         </motion.div>
 
@@ -75,7 +75,7 @@ export default function FeaturedWork() {
           className="mb-8"
         >
           <Link href="/portfolio" className="group block">
-            <div className="relative overflow-hidden rounded-3xl glass-card">
+            <div className="relative overflow-hidden rounded-2xl glass-card glow-aurora-hover hover-glow-overlay">
               <div className="aspect-[16/9] md:aspect-[21/9] relative">
                 <Image
                   src={featuredProjects[0].image}
@@ -88,13 +88,11 @@ export default function FeaturedWork() {
                 <div className="absolute inset-0 bg-black/70 transition-opacity duration-500 group-hover:opacity-0" />
 
                 {/* Organic gradient overlays */}
-                <div className="absolute inset-0 bg-gradient-to-t from-void via-void/40 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-r from-bruise-deep/30 via-transparent to-cellular-purple/20 opacity-60" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-aurora-coral/10 via-transparent to-aurora-purple/10 opacity-60" />
 
-                {/* Cellular overlay on hover */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                  <div className="cellular-overlay" />
-                </div>
+                {/* Aurora overlay on hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-t from-aurora-purple/10 via-transparent to-transparent" />
               </div>
 
               {/* Content */}
@@ -105,7 +103,7 @@ export default function FeaturedWork() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
                 >
-                  <span className="text-cellular-purple text-sm font-medium tracking-widest uppercase transition-opacity duration-500 group-hover:opacity-0">
+                  <span className="text-aurora-purple text-sm font-medium tracking-widest uppercase transition-opacity duration-500 group-hover:opacity-0">
                     {featuredProjects[0].category}
                   </span>
                   <h3 className="text-3xl md:text-4xl font-display font-light text-white mt-2 mb-3 group-hover:text-white/80 transition-opacity duration-500 group-hover:opacity-0">
@@ -131,7 +129,7 @@ export default function FeaturedWork() {
               transition={{ delay: index * 0.1 }}
             >
               <Link href="/portfolio" className="group block">
-                <div className="relative overflow-hidden rounded-2xl glass-card">
+                <div className="relative overflow-hidden rounded-xl glass-card glow-aurora-hover hover-glow-overlay">
                   <div className="aspect-[4/5] relative">
                     <Image
                       src={project.image}
@@ -144,10 +142,10 @@ export default function FeaturedWork() {
                     <div className="absolute inset-0 bg-black/70 transition-opacity duration-500 group-hover:opacity-0" />
 
                     {/* Gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-void via-void/30 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
 
                     {/* Hover glow */}
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-t from-cellular-purple/20 via-transparent to-transparent" />
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-t from-aurora-purple/20 via-transparent to-transparent" />
                   </div>
 
                   {/* Content */}

@@ -83,7 +83,12 @@ export default function ContactClient() {
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-8 bg-black">
+    <div className="min-h-screen pt-24 pb-8 bg-black relative overflow-hidden">
+      {/* Aurora background orbs */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 -right-32 w-[500px] h-[500px] rounded-full blur-[150px] bg-aurora-purple/[0.06] animate-pulse-glow" />
+        <div className="absolute bottom-1/3 -left-32 w-[400px] h-[400px] rounded-full blur-[120px] bg-aurora-pink/[0.04] animate-pulse-glow" style={{ animationDelay: '2s' }} />
+      </div>
       <div className="max-w-5xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Page header - compact */}
         <motion.div
@@ -92,7 +97,7 @@ export default function ContactClient() {
           className="mb-8"
         >
           <h1 className="font-display text-4xl md:text-5xl text-white mb-3">
-            Let&apos;s Connect
+            Let&apos;s <span className="gradient-text-aurora">Connect</span>
           </h1>
           <p className="text-gray-300 text-base max-w-2xl leading-relaxed">
             Gallery inquiries, commissions, collaborations, or simply a conversation about art and
@@ -112,7 +117,7 @@ export default function ContactClient() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="bg-gray-900 border border-gray-800 rounded p-10 text-center"
+                className="glass-card p-10 text-center"
               >
                 <div className="w-14 h-14 rounded-full bg-gray-800 flex items-center justify-center mx-auto mb-5">
                   <CheckCircle className="w-7 h-7 text-gray-300" />
@@ -184,7 +189,7 @@ export default function ContactClient() {
                 </div>
 
                 {/* Note - better contrast */}
-                <div className="bg-gray-900 border border-gray-700 rounded p-3">
+                <div className="glass-card p-3">
                   <p className="text-gray-300 text-sm leading-relaxed">
                     For project inquiries, feel free to share details about your vision, timeline, and
                     any reference material. It helps me provide the most thoughtful response.
@@ -231,7 +236,7 @@ export default function ContactClient() {
             className="space-y-4"
           >
             {/* Direct Contact */}
-            <div className="bg-gray-900 border border-gray-800 rounded p-5">
+            <div className="glass-card p-5">
               <h3 className="text-xs tracking-[0.15em] uppercase text-gray-400 mb-4">Direct Contact</h3>
 
               <div className="space-y-4">
@@ -263,7 +268,7 @@ export default function ContactClient() {
             </div>
 
             {/* Social */}
-            <div className="bg-gray-900 border border-gray-800 rounded p-5">
+            <div className="glass-card p-5">
               <h3 className="text-xs tracking-[0.15em] uppercase text-gray-400 mb-4">Follow</h3>
 
               <div className="flex items-center gap-2">
@@ -273,7 +278,7 @@ export default function ContactClient() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-gray-400 hover:text-white transition-all"
+                    className="w-10 h-10 rounded-lg bg-white/[0.04] border border-white/[0.08] hover:bg-white/[0.08] hover:border-white/[0.15] flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300"
                     aria-label={social.label}
                   >
                     <social.icon className="w-5 h-5" />
