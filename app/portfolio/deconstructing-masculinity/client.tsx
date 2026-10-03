@@ -1,12 +1,16 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { cld, cldSrcSet } from '@/lib/cloudinary';
 import { imageSize } from '@/lib/image-sizes';
+import Lightbox from '@/components/lightbox';
 
 export default function DeconstructingMasculinityPage({ images }: { images: string[] }) {
+  const [viewing, setViewing] = useState<number | null>(null);
+
   return (
     <div className="min-h-screen bg-black pt-20">
       {/* Hero section with title and statement */}
@@ -86,7 +90,12 @@ export default function DeconstructingMasculinityPage({ images }: { images: stri
                 transition={{ duration: 0.5, delay: index * 0.03 }}
                 className="group relative overflow-hidden bg-gray-950 break-inside-avoid mb-6"
               >
-                <div className="relative">
+                <button
+                  type="button"
+                  onClick={() => setViewing(index)}
+                  aria-label={`View image ${index + 1} full screen`}
+                  className="relative block w-full cursor-zoom-in"
+                >
                   <img
                     src={cld(img, 1200)}
                     srcSet={cldSrcSet(img)}
@@ -96,13 +105,14 @@ export default function DeconstructingMasculinityPage({ images }: { images: stri
                     loading={index < 6 ? 'eager' : 'lazy'}
                     className="block w-full h-auto transition-transform duration-700 group-hover:scale-[1.02]"
                   />
-                </div>
+                </button>
                 <div className="absolute bottom-4 left-4 text-white/20 text-xs font-mono">
                   {String(index + 1).padStart(2, '0')}
                 </div>
               </motion.div>
             ))}
           </div>
+          <Lightbox images={images} index={viewing} onIndexChange={setViewing} title="Deconstructing Masculinity" />
         </div>
       </section>
 
