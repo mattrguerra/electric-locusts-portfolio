@@ -4,47 +4,19 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { cld } from '@/lib/cloudinary';
 
-const allFeaturedProjects = [
-  {
-    id: '1',
-    slug: 'what-we-were-left-with',
-    title: 'What We Were Left With',
-    category: 'Documentary',
-    description: 'Archive of survival from years of addiction',
-    image: 'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258107/33_wng4mt.jpg',
-  },
-  {
-    id: '2',
-    slug: 'self-annihilation',
-    title: 'Self Annihilation',
-    category: 'Mixed Media',
-    description:
-      'Scratching and burning myself off medium format negatives—physically removing myself from the frame',
-    image: 'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258735/1_plkakn.jpg',
-    featured: true,
-  },
+export type FeaturedProject = {
+  id: string;
+  slug: string;
+  title: string;
+  category: string;
+  description: string;
+  image: string;
+  featured?: boolean;
+};
 
-  {
-    id: '3',
-    slug: 'people-who-saved-my-life',
-    title: 'People Who Saved My Life',
-    category: 'Cyanotype',
-    description: 'Portraits of the people who kept me alive',
-    image: 'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257844/Cyanotype0001_thqymg.jpg',
-  },
-  {
-    id: '4',
-    slug: 'deconstructing-masculinity',
-    title: 'Deconstructing Masculinity',
-    category: 'Portrait',
-    description: 'Challenging narrow definitions of manhood',
-    image: 'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257508/21_hdndtl.jpg',
-  },
-];
-
-export default function FeaturedWorkClient({ hidden }: { hidden: string[] }) {
-  const featuredProjects = allFeaturedProjects.filter((p) => !hidden.includes(p.slug));
+export default function FeaturedWorkClient({ featuredProjects }: { featuredProjects: FeaturedProject[] }) {
   if (featuredProjects.length === 0) return null;
 
   return (
@@ -85,7 +57,7 @@ export default function FeaturedWorkClient({ hidden }: { hidden: string[] }) {
             <div className="relative overflow-hidden rounded-2xl glass-card glow-aurora-hover hover-glow-overlay">
               <div className="aspect-[16/9] md:aspect-[21/9] relative">
                 <Image
-                  src={featuredProjects[0].image}
+                  src={cld(featuredProjects[0].image, 2000)}
                   alt={featuredProjects[0].title}
                   fill
                   className="object-cover transition-all duration-1000 ease-organic group-hover:scale-105 img-atmospheric"
@@ -139,7 +111,7 @@ export default function FeaturedWorkClient({ hidden }: { hidden: string[] }) {
                 <div className="relative overflow-hidden rounded-xl glass-card glow-aurora-hover hover-glow-overlay">
                   <div className="aspect-[4/5] relative">
                     <Image
-                      src={project.image}
+                      src={cld(project.image, 800)}
                       alt={project.title}
                       fill
                       className="object-cover transition-all duration-700 ease-organic group-hover:scale-105 img-atmospheric"

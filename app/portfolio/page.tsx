@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { getHiddenSeries } from '@/lib/series-visibility';
+import { getVisibility } from '@/lib/series-visibility';
+import { coverPhoto } from '@/lib/series-photos';
+import { cld, cldSrcSet } from '@/lib/cloudinary';
 import { imageSize } from '@/lib/image-sizes';
 
 export const metadata: Metadata = {
@@ -70,8 +72,10 @@ const allSeries = [
 ];
 
 export default async function PortfolioPage() {
-  const hidden = await getHiddenSeries();
-  const series = allSeries.filter((s) => !hidden.includes(s.slug));
+  const { hiddenSeries, hiddenPhotos } = await getVisibility();
+  const series = allSeries
+    .filter((s) => !hiddenSeries.includes(s.slug))
+    .map((s) => ({ ...s, image: coverPhoto(s.slug, s.image, hiddenPhotos) }));
 
   return (
     <div className="min-h-screen pt-20 pb-16 bg-black relative overflow-hidden">
@@ -99,7 +103,9 @@ export default async function PortfolioPage() {
               {/* Image container */}
               <div className="relative bg-gray-900 rounded-xl overflow-hidden">
                 <img
-                  src={s.image}
+                  src={cld(s.image, 1200)}
+                  srcSet={cldSrcSet(s.image)}
+                  sizes="(min-width: 1024px) 400px, (min-width: 768px) 50vw, 100vw"
                   {...imageSize(s.image)}
                   alt={s.title}
                   loading="lazy"

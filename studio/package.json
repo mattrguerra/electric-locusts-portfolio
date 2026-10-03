@@ -6,7 +6,8 @@
     "dev": "sanity dev",
     "build": "sanity build",
     "deploy": "sanity deploy",
-    "seed": "sanity dataset import seed/series.ndjson production --replace"
+    "seed": "sanity dataset import seed/series.ndjson production --replace",
+    "sync": "sanity exec scripts/sync-photos.ts --with-user-token"
   },
   "dependencies": {
     "react": "^19.2.3",

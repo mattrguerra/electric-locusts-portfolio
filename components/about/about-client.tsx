@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowRight, ArrowDown, Instagram, Facebook } from 'lucide-react';
+import { cld } from '@/lib/cloudinary';
 
 // Threads icon component
 const ThreadsIcon = ({ className }: { className?: string }) => (
@@ -94,7 +95,7 @@ export default function AboutClient() {
             >
               <div className="aspect-[3/4] bg-gray-900 rounded-xl overflow-hidden glow-aurora">
                 <img
-                  src="https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769261111/matt2_h3rqdm.jpg"
+                  src={cld('https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769261111/matt2_h3rqdm.jpg', 1000)}
                   alt="Matt Guerra"
                   className="w-full h-full object-cover opacity-80"
                 />

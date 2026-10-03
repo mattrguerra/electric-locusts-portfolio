@@ -4,55 +4,17 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowDown } from 'lucide-react';
+import { cld, cldSrcSet } from '@/lib/cloudinary';
 
-// Series data for interactive preview - ordered by year (descending: 2023 -> 2019)
-const allSeries = [
-  {
-    slug: 'what-we-were-left-with',
-    title: 'What We Were Left With',
-    year: 2023,
-    image: 'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258107/33_wng4mt.jpg',
-    tagline: 'Evidence of survival',
-  },
-  {
-    slug: 'self-annihilation',
-    title: 'Self Annihilation',
-    year: 2022,
-    image: 'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769258735/1_plkakn.jpg',
-    tagline: 'Identity destroyed',
-  },
-  {
-    slug: 'people-who-saved-my-life',
-    title: 'People Who Saved My Life',
-    year: 2021,
-    image: 'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257844/Cyanotype0001_thqymg.jpg',
-    tagline: 'Gratitude made visible',
-  },
-  {
-    slug: 'exposure',
-    title: 'Exposure',
-    year: 2021,
-    image: 'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257879/_MG_8279_eb8tmi.jpg',
-    tagline: 'Depression visualized',
-  },
-  {
-    slug: 'mixed',
-    title: 'Mixed',
-    year: 2020,
-    image: 'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257784/4_t9h288.jpg',
-    tagline: 'Chaos contained',
-  },
-  {
-    slug: 'deconstructing-masculinity',
-    title: 'Deconstructing Masculinity',
-    year: 2019,
-    image: 'https://res.cloudinary.com/dkrj3oqsy/image/upload/v1769257508/21_hdndtl.jpg',
-    tagline: 'Beyond the archetype',
-  },
-];
+export type HeroSeries = {
+  slug: string;
+  title: string;
+  year: number;
+  image: string;
+  tagline: string;
+};
 
-export default function HeroSectionClient({ hidden }: { hidden: string[] }) {
-  const series = allSeries.filter((s) => !hidden.includes(s.slug));
+export default function HeroSectionClient({ series }: { series: HeroSeries[] }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
   const containerRef = useRef<HTMLElement>(null);
@@ -94,7 +56,9 @@ export default function HeroSectionClient({ hidden }: { hidden: string[] }) {
             className="absolute inset-0"
           >
             <img
-              src={activeSeries.image}
+              src={cld(activeSeries.image, 1920)}
+              srcSet={cldSrcSet(activeSeries.image)}
+              sizes="100vw"
               alt=""
               className="w-full h-full object-cover"
               style={{ filter: 'grayscale(50%) contrast(1.1)' }}
