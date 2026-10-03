@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { getHiddenSeries } from '@/lib/series-visibility';
+import { imageSize } from '@/lib/image-sizes';
 
 export const metadata: Metadata = {
   title: 'Work | Matt Guerra — Electric Locusts',
@@ -88,20 +89,21 @@ export default async function PortfolioPage() {
         </header>
 
         {/* Grid with dark overlay that fades on hover to reveal image */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-5">
           {series.map((s) => (
             <Link
               key={s.slug}
               href={`/portfolio/${s.slug}`}
-              className="group block relative overflow-hidden rounded-xl glow-aurora-hover"
+              className="group block relative overflow-hidden rounded-xl glow-aurora-hover break-inside-avoid mb-5"
             >
               {/* Image container */}
-              <div className="aspect-[4/5] relative bg-gray-900 rounded-xl overflow-hidden">
+              <div className="relative bg-gray-900 rounded-xl overflow-hidden">
                 <img
                   src={s.image}
+                  {...imageSize(s.image)}
                   alt={s.title}
                   loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                  className="block w-full h-auto transition-all duration-700 group-hover:scale-105"
                 />
 
                 {/* Dark overlay - visible by default, fades on hover */}

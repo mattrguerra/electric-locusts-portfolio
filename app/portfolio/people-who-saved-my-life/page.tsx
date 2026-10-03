@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
+import { imageSize } from '@/lib/image-sizes';
 
 // Cloudinary image URLs for People Who Saved My Life
 const images = [
@@ -93,12 +94,13 @@ export default function PeopleWhoSavedMyLifePage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group relative overflow-hidden bg-gray-950"
               >
-                <div className="aspect-[3/4] relative">
+                <div className="relative">
                   <img
                     src={img}
+                    {...imageSize(img)}
                     alt={`People Who Saved My Life ${index + 1}`}
                     loading={index < 2 ? 'eager' : 'lazy'}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.01]"
+                    className="block w-full h-auto transition-transform duration-700 group-hover:scale-[1.01]"
                   />
                 </div>
                 <div className="absolute bottom-4 left-4 text-white/20 text-xs font-mono">

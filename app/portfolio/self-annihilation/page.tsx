@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
+import { imageSize } from '@/lib/image-sizes';
 import VideoPlayer from '@/components/video-player';
 
 // Cloudinary image URLs for Self Annihilation
@@ -115,21 +116,22 @@ export default function SelfAnnihilationPage() {
           </h2>
 
           {/* Masonry-style gallery with larger images */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="columns-1 md:columns-2 gap-6">
             {images.map((img, index) => (
               <motion.div
                 key={img}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="group relative overflow-hidden bg-gray-950"
+                className="group relative overflow-hidden bg-gray-950 break-inside-avoid mb-6"
               >
-                <div className="aspect-[4/5] relative">
+                <div className="relative">
                   <img
                     src={img}
+                    {...imageSize(img)}
                     alt={`Self Annihilation ${index + 1}`}
                     loading={index < 4 ? 'eager' : 'lazy'}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                    className="block w-full h-auto transition-transform duration-700 group-hover:scale-[1.02]"
                   />
                 </div>
                 {/* Subtle number indicator */}
