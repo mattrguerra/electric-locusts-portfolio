@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { getHiddenSeries } from '@/lib/series-visibility';
 
 export const metadata: Metadata = {
   title: 'Work | Matt Guerra — Electric Locusts',
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 // Series ordered by year (descending: 2023 -> 2019)
-const series = [
+const allSeries = [
   {
     slug: 'what-we-were-left-with',
     title: 'What We Were Left With',
@@ -67,7 +68,10 @@ const series = [
   },
 ];
 
-export default function PortfolioPage() {
+export default async function PortfolioPage() {
+  const hidden = await getHiddenSeries();
+  const series = allSeries.filter((s) => !hidden.includes(s.slug));
+
   return (
     <div className="min-h-screen pt-20 pb-16 bg-black relative overflow-hidden">
       {/* Aurora background orb */}
