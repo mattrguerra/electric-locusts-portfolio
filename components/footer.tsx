@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Instagram, Facebook, Mail } from 'lucide-react';
 
 // Threads icon component
@@ -29,6 +30,9 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const pathname = usePathname();
+  if (pathname === '/unlock') return null;
+
   return (
     <footer className="relative bg-[#0a0a0a] border-t border-white/[0.06]">
       <div className="max-w-6xl mx-auto px-6 lg:px-8 py-12">

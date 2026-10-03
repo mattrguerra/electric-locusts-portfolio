@@ -28,6 +28,8 @@ export default function Navigation() {
     return () => window?.removeEventListener?.('scroll', handleScroll);
   }, []);
 
+  if (pathname === '/unlock') return null;
+
   if (!mounted) {
     return (
       <header className="fixed top-0 left-0 right-0 z-50 h-20 flex items-center">
